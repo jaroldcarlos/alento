@@ -1,0 +1,7 @@
+{% load widget_tweaks %}
+{% if field %}
+    <div class="form-group">
+    <label>{{ field.label|capfirst }}</label>
+    {% render_field field type="time" class="form-control" placeholder=field.label %}
+    </div>
+{% endif %}

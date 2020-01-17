@@ -1,0 +1,882 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-14 13:50+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\blog\models.py:17 .\core\abstract.py:279
+#: .\templates\pages\contact.html:74
+msgid "name"
+msgstr ""
+
+#: .\apps\blog\models.py:18 .\core\abstract.py:107
+msgid "description short"
+msgstr ""
+
+#: .\apps\blog\models.py:20 .\apps\blog\models.py:49
+#: .\apps\dashboard\templates\dashboard\form\blog.html:92
+#: .\apps\patient\models.py:23 .\apps\service\models.py:19
+#: .\apps\service\models.py:46 .\apps\service\models.py:61
+#: .\apps\worker\models.py:23 .\core\abstract.py:138 .\core\abstract.py:148
+#: .\core\abstract.py:338
+msgid "image"
+msgstr ""
+
+#: .\apps\blog\models.py:26
+msgid "category blog"
+msgstr ""
+
+#: .\apps\blog\models.py:27
+msgid "categories blogs"
+msgstr ""
+
+#: .\apps\blog\models.py:38
+msgid "author"
+msgstr ""
+
+#: .\apps\blog\models.py:39
+msgid "title"
+msgstr ""
+
+#: .\apps\blog\models.py:40
+msgid "subtitle"
+msgstr ""
+
+#: .\apps\blog\models.py:46 .\apps\frontend\models.py:30
+msgid "icon"
+msgstr ""
+
+#: .\apps\blog\models.py:47
+msgid "name image"
+msgstr ""
+
+#: .\apps\blog\models.py:56 .\apps\blog\templates\blog\index.html:5
+#: .\apps\blog\templates\blog\index_default.html:5
+msgid "blog"
+msgstr ""
+
+#: .\apps\blog\models.py:57
+msgid "blogs"
+msgstr ""
+
+#: .\apps\blog\templates\blog\info.html:4
+msgid "about"
+msgstr ""
+
+#: .\apps\blog\templates\blog\info.html:5
+msgid ""
+"I must admit this particular defense set me on edge a little bit, for two "
+"reasons. The first is that she’s being held to a completely different "
+"standard than male politicians are held to."
+msgstr ""
+
+#: .\apps\blog\templates\blog\item.html:42
+msgid "read more"
+msgstr ""
+
+#: .\apps\blog\views.py:48
+msgid "blog was successfully created"
+msgstr ""
+
+#: .\apps\blog\views.py:51
+msgid "please correct the error below."
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:11
+msgid "this month's jobs"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\blog.html:18
+msgid "add a blog"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\blog.html:24
+msgid "back"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\blog.html:74
+msgid "blog info"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\blog.html:85
+msgid "texts"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\blog.html:100
+msgid "Seo"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\event.html:16
+msgid "add event"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\event.html:34
+#: .\apps\dashboard\templates\dashboard\form\patient.html:261
+msgid "save"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\patient.html:19
+#: .\apps\dashboard\templates\dashboard\form\worker.html:20
+msgid "datas"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\patient.html:56
+msgid "services"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:23
+msgid "add datas"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:35
+msgid "localition"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:38
+msgid "add location"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:50
+#: .\templates\pages\contact.html:4 .\templates\pages\contact.html:29
+msgid "contact"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:53
+msgid "add contacts"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:65
+#: .\apps\patient\models.py:46 .\apps\worker\models.py:43
+msgid "note"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:68
+msgid "add notes"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:88
+msgid "adds the data for worker"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:102
+msgid "options"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:113
+msgid "adds the locations for the worker"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:143
+msgid "adds the contacts for the worker"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:171
+msgid "add the note for the worker"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:188
+msgid "previus"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:191
+msgid "submit"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\form\worker.html:194
+msgid "next step"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:23
+msgid "report of"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:27
+#: .\apps\dashboard\templates\dashboard\print\event.html:89
+#: .\apps\dashboard\templates\dashboard\view\event_list.html:30
+msgid "auxiliar"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:31
+#: .\apps\dashboard\templates\dashboard\print\event.html:91
+#: .\apps\dashboard\templates\dashboard\view\event_list.html:33
+#: .\apps\worker\models.py:15 .\core\abstract.py:270
+msgid "user"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:36
+msgid "id"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:51
+#: .\apps\dashboard\templates\dashboard\view\event_list.html:45
+#: .\apps\schedule\models.py:37 .\core\abstract.py:290
+#: .\templates\inc\table_patient.html:26
+#: .\templates\inc\table_patient_default.html:28
+msgid "date"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:52
+#: .\core\templatetags\custom_filters.py:201 .\core\utils.py:115
+msgid "day"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:53
+#: .\apps\dashboard\templates\dashboard\view\event_list.html:46
+#: .\templates\inc\table_patient.html:27
+#: .\templates\inc\table_patient_default.html:29
+msgid "start time"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:54
+#: .\apps\dashboard\templates\dashboard\view\event_list.html:47
+#: .\templates\inc\table_patient.html:28
+#: .\templates\inc\table_patient_default.html:30
+msgid "end time"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:55
+#: .\templates\inc\table_patient.html:29
+#: .\templates\inc\table_patient_default.html:31
+msgid "time"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:56
+msgid "comments"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\print\event.html:74
+#: .\apps\dashboard\templates\dashboard\view\event_list.html:48
+#: .\core\abstract.py:294
+msgid "total"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\blog_list.html:90
+msgid "start"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\blog_list.html:98
+msgid "due"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\blog_list.html:122
+msgid "edit blog"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\blog_list.html:124
+#: .\apps\frontend\admin.py:49
+msgid "active"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\blog_list.html:126
+msgid "desactive"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\calendar_list.html:16
+#: .\core\abstract.py:418
+msgid "schedule"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\event_list.html:15
+msgid "events list"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\event_list.html:36
+#: .\apps\dashboard\views.py:35 .\core\templatetags\custom_filters.py:199
+#: .\core\utils.py:113
+msgid "month"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\patient_list.html:81
+#: .\apps\schedule\models.py:31
+msgid "patient"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\patient_list.html:91
+#: .\apps\dashboard\templates\dashboard\view\worker_list.html:96
+#: .\apps\frontend\models.py:81 .\core\abstract.py:88
+#: .\templates\pages\contact.html:83
+msgid "email"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\patient_list.html:95
+#: .\apps\dashboard\templates\dashboard\view\worker_list.html:100
+#: .\apps\frontend\models.py:82 .\apps\patient\models.py:40
+#: .\apps\worker\models.py:36 .\apps\worker\models.py:37 .\core\abstract.py:87
+msgid "phone"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\patient_list.html:99
+#: .\apps\dashboard\templates\dashboard\view\worker_list.html:104
+#: .\apps\frontend\models.py:83 .\apps\patient\models.py:33
+#: .\apps\worker\models.py:29 .\core\abstract.py:89
+#: .\templates\pages\contact.html:38
+msgid "address"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\patient_list.html:105
+#: .\apps\dashboard\templates\dashboard\view\worker_list.html:110
+msgid "see profile"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\worker_list.html:83
+msgid "administrador"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\worker_list.html:85
+#: .\apps\patient\models.py:15 .\apps\schedule\models.py:23
+#: .\templates\dashboard\_user_topbar_menu.html:31
+msgid "worker"
+msgstr ""
+
+#: .\apps\frontend\admin.py:18 .\apps\frontend\admin.py:53
+msgid "Information"
+msgstr ""
+
+#: .\apps\frontend\admin.py:29 .\core\abstract.py:248
+msgid "hook"
+msgstr ""
+
+#: .\apps\frontend\admin.py:33
+msgid "parent"
+msgstr ""
+
+#: .\apps\frontend\admin.py:37
+msgid "text"
+msgstr ""
+
+#: .\apps\frontend\models.py:23
+msgid "category link"
+msgstr ""
+
+#: .\apps\frontend\models.py:24
+msgid "category links"
+msgstr ""
+
+#: .\apps\frontend\models.py:31 .\apps\frontend\models.py:107
+#: .\core\abstract.py:272
+msgid "url"
+msgstr ""
+
+#: .\apps\frontend\models.py:32
+msgid "color"
+msgstr ""
+
+#: .\apps\frontend\models.py:35 .\apps\service\models.py:39
+msgid "category"
+msgstr ""
+
+#: .\apps\frontend\models.py:75 .\core\abstract.py:55 .\core\abstract.py:344
+msgid "link"
+msgstr ""
+
+#: .\apps\frontend\models.py:76
+msgid "links"
+msgstr ""
+
+#: .\apps\frontend\models.py:106
+msgid "network"
+msgstr ""
+
+#: .\apps\frontend\models.py:110 .\apps\frontend\models.py:111
+msgid "Social"
+msgstr ""
+
+#: .\apps\frontend\views.py:40
+msgid "We will soon give you an answer to your message"
+msgstr ""
+
+#: .\apps\frontend\views.py:41 .\apps\worker\views.py:84
+#: .\core\context_processors.py:7
+msgid "alento"
+msgstr ""
+
+#: .\apps\frontend\views.py:46 .\apps\frontend\views.py:50
+#: .\apps\worker\views.py:88
+msgid "Invalid header found."
+msgstr ""
+
+#: .\apps\patient\models.py:29 .\core\abstract.py:84
+msgid "first name"
+msgstr ""
+
+#: .\apps\patient\models.py:30 .\core\abstract.py:85
+#: .\templates\pages\contact.html:77
+msgid "last name"
+msgstr ""
+
+#: .\apps\patient\models.py:31
+msgid "dni"
+msgstr ""
+
+#: .\apps\patient\models.py:34 .\apps\worker\models.py:30
+msgid "postal code"
+msgstr ""
+
+#: .\apps\patient\models.py:35 .\apps\worker\models.py:31
+msgid "city"
+msgstr ""
+
+#: .\apps\patient\models.py:36 .\apps\worker\models.py:32
+msgid "state"
+msgstr ""
+
+#: .\apps\patient\models.py:38 .\apps\worker\models.py:34
+msgid "country"
+msgstr ""
+
+#: .\apps\patient\models.py:42 .\apps\worker\models.py:39
+msgid "contact name"
+msgstr ""
+
+#: .\apps\patient\models.py:43 .\apps\worker\models.py:40
+msgid "contact phone"
+msgstr ""
+
+#: .\apps\patient\models.py:44 .\apps\worker\models.py:41
+msgid "contact email"
+msgstr ""
+
+#: .\apps\patient\models.py:47 .\apps\worker\models.py:44
+msgid "private comment"
+msgstr ""
+
+#: .\apps\patient\views.py:30
+msgid "patient was successfully created"
+msgstr ""
+
+#: .\apps\patient\views.py:34
+msgid "the patient already exist"
+msgstr ""
+
+#: .\apps\patient\views.py:36 .\apps\schedule\views.py:46
+msgid "Please correct the error below."
+msgstr ""
+
+#: .\apps\schedule\models.py:14
+msgid "personal and domestic services"
+msgstr ""
+
+#: .\apps\schedule\models.py:15
+msgid "complementary services"
+msgstr ""
+
+#: .\apps\schedule\models.py:16
+msgid "therapeutic service"
+msgstr ""
+
+#: .\apps\schedule\models.py:17
+msgid "other service"
+msgstr ""
+
+#: .\apps\schedule\models.py:19
+msgid "service"
+msgstr ""
+
+#: .\apps\schedule\models.py:20 .\core\abstract.py:111
+msgid "description"
+msgstr ""
+
+#: .\apps\schedule\models.py:38
+msgid "hour of the event"
+msgstr ""
+
+#: .\apps\schedule\models.py:39
+msgid "end hour of the event"
+msgstr ""
+
+#: .\apps\schedule\models.py:43 .\apps\schedule\models.py:44
+msgid "Scheduling"
+msgstr ""
+
+#: .\apps\schedule\views.py:36
+msgid "event was successfully created"
+msgstr ""
+
+#: .\apps\schedule\views.py:94
+msgid "{}hours  {}minutes"
+msgstr ""
+
+#: .\apps\service\models.py:28 .\apps\service\models.py:55
+msgid "category service"
+msgstr ""
+
+#: .\apps\service\models.py:29 .\apps\service\models.py:56
+msgid "categories services"
+msgstr ""
+
+#: .\apps\service\models.py:70
+msgid "Specialised Unit"
+msgstr ""
+
+#: .\apps\service\models.py:71
+msgid "Specialised Units"
+msgstr ""
+
+#: .\apps\worker\views.py:35
+msgid "username and password are not correct"
+msgstr ""
+
+#: .\apps\worker\views.py:85
+msgid "Welcome to alento, your credentials are: user: "
+msgstr ""
+
+#: .\apps\worker\views.py:85
+msgid " password: "
+msgstr ""
+
+#: .\apps\worker\views.py:90
+msgid "worker was successfully created"
+msgstr ""
+
+#: .\apps\worker\views.py:93
+msgid "please correct the error below"
+msgstr ""
+
+#: .\core\abstract.py:23
+msgid "active_status"
+msgstr ""
+
+#: .\core\abstract.py:25
+msgid "date ini"
+msgstr ""
+
+#: .\core\abstract.py:26
+msgid "date end"
+msgstr ""
+
+#: .\core\abstract.py:50
+msgid "requirements"
+msgstr ""
+
+#: .\core\abstract.py:54 .\core\abstract.py:343
+msgid "price"
+msgstr ""
+
+#: .\core\abstract.py:67
+msgid "min people"
+msgstr ""
+
+#: .\core\abstract.py:73
+msgid "max people"
+msgstr ""
+
+#: .\core\abstract.py:86
+msgid "company"
+msgstr ""
+
+#: .\core\abstract.py:133 .\core\abstract.py:143 .\core\abstract.py:153
+#: .\core\abstract.py:163 .\core\abstract.py:173 .\core\abstract.py:183
+#: .\core\abstract.py:193 .\core\abstract.py:203
+msgid "image name"
+msgstr ""
+
+#: .\core\abstract.py:158
+msgid "image 3"
+msgstr ""
+
+#: .\core\abstract.py:168
+msgid "image 4"
+msgstr ""
+
+#: .\core\abstract.py:178
+msgid "image 5"
+msgstr ""
+
+#: .\core\abstract.py:188
+msgid "image 6"
+msgstr ""
+
+#: .\core\abstract.py:198
+msgid "image 7"
+msgstr ""
+
+#: .\core\abstract.py:208
+msgid "image 8"
+msgstr ""
+
+#: .\core\abstract.py:229
+msgid "latitude"
+msgstr ""
+
+#: .\core\abstract.py:230
+msgid "longitude"
+msgstr ""
+
+#: .\core\abstract.py:243
+msgid "home frontend"
+msgstr ""
+
+#: .\core\abstract.py:244
+msgid "footer frontend"
+msgstr ""
+
+#: .\core\abstract.py:245
+msgid "home dashboard"
+msgstr ""
+
+#: .\core\abstract.py:246
+msgid "footer dashboard"
+msgstr ""
+
+#: .\core\abstract.py:271
+msgid "password"
+msgstr ""
+
+#: .\core\abstract.py:291
+msgid "date payment"
+msgstr ""
+
+#: .\core\abstract.py:293
+msgid "invoice number"
+msgstr ""
+
+#: .\core\abstract.py:295
+msgid "comment"
+msgstr ""
+
+#: .\core\abstract.py:352
+msgid "Form Draft"
+msgstr ""
+
+#: .\core\abstract.py:353
+msgid "Draft"
+msgstr ""
+
+#: .\core\abstract.py:354
+msgid "Published"
+msgstr ""
+
+#: .\core\abstract.py:355
+msgid "Withdrawn"
+msgstr ""
+
+#: .\core\abstract.py:360
+msgid "publication status"
+msgstr ""
+
+#: .\core\abstract.py:373
+#, python-brace-format
+msgid "se mostrará a partir del {date}"
+msgstr ""
+
+#: .\core\abstract.py:376
+#, python-brace-format
+msgid "oculto desde el {date}"
+msgstr ""
+
+#: .\core\abstract.py:402
+msgid "season"
+msgstr ""
+
+#: .\core\abstract.py:408
+msgid "season date ini"
+msgstr ""
+
+#: .\core\abstract.py:413
+msgid "season date end"
+msgstr ""
+
+#: .\core\abstract.py:440
+msgid "meta_keywords"
+msgstr ""
+
+#: .\core\abstract.py:441
+msgid "meta_title"
+msgstr ""
+
+#: .\core\abstract.py:442
+msgid "meta_description"
+msgstr ""
+
+#: .\core\abstract.py:449
+msgid "slug"
+msgstr ""
+
+#: .\core\settings.py:162 .\templates\dashboard\_language_selector.html:46
+msgid "galician"
+msgstr ""
+
+#: .\core\settings.py:163 .\templates\dashboard\_language_selector.html:40
+msgid "spanish"
+msgstr ""
+
+#: .\core\settings.py:164 .\templates\dashboard\_language_selector.html:34
+msgid "portuguese"
+msgstr ""
+
+#: .\core\settings.py:165
+msgid "english"
+msgstr ""
+
+#: .\core\settings.py:177 .\core\settings.py:178
+msgid "Alento"
+msgstr ""
+
+#: .\core\settings.py:179
+msgid "Welcome to Alento"
+msgstr ""
+
+#: .\core\templatetags\custom_filters.py:184 .\core\utils.py:91
+msgid "now"
+msgstr ""
+
+#: .\core\templatetags\custom_filters.py:198 .\core\utils.py:112
+msgid "year"
+msgstr ""
+
+#: .\core\templatetags\custom_filters.py:200 .\core\utils.py:114
+msgid "week"
+msgstr ""
+
+#: .\core\templatetags\custom_filters.py:202 .\core\utils.py:116
+msgid "hour"
+msgstr ""
+
+#: .\core\templatetags\custom_filters.py:203 .\core\utils.py:117
+msgid "minute"
+msgstr ""
+
+#: .\core\templatetags\custom_filters.py:204 .\core\utils.py:118
+msgid "second"
+msgstr ""
+
+#: .\core\utils.py:121
+msgid "millisecond"
+msgstr ""
+
+#: .\core\utils.py:122
+msgid "microsecond"
+msgstr ""
+
+#: .\templates\admin\base_site.html:6
+msgid "site admin"
+msgstr ""
+
+#: .\templates\block\_block_alerts.html:9
+msgid "important"
+msgstr ""
+
+#: .\templates\block\_block_socials.html:3
+msgid "social networks"
+msgstr ""
+
+#: .\templates\block\_block_socials.html:7
+msgid "follow us"
+msgstr ""
+
+#: .\templates\dashboard\_header_menu.html:7
+#: .\templates\dashboard\layout.html:23 .\templates\dashboard\layout.html:926
+msgid "dashboard"
+msgstr ""
+
+#: .\templates\dashboard\_header_menu.html:17
+msgid "search"
+msgstr ""
+
+#: .\templates\dashboard\_user_topbar_menu.html:4
+msgid "hi"
+msgstr ""
+
+#: .\templates\dashboard\_user_topbar_menu.html:29
+msgid "admin"
+msgstr ""
+
+#: .\templates\dashboard\_user_topbar_menu.html:47
+msgid "my profile"
+msgstr ""
+
+#: .\templates\dashboard\_user_topbar_menu.html:50
+msgid "account settings and more"
+msgstr ""
+
+#: .\templates\dashboard\_user_topbar_menu.html:111
+msgid "sign out"
+msgstr ""
+
+#: .\templates\dashboard\layout.html:933
+msgid "today"
+msgstr ""
+
+#: .\templates\forms\field_file.html:16
+msgid "choose file"
+msgstr ""
+
+#: .\templates\inc\activities.html:8
+msgid "activities"
+msgstr ""
+
+#: .\templates\inc\table_patient.html:14 .\templates\inc\table_patient.html:15
+msgid "print"
+msgstr ""
+
+#: .\templates\inc\worker_info.html:22
+msgid "events for today"
+msgstr ""
+
+#: .\templates\inc\worker_info.html:47
+msgid "today's gain"
+msgstr ""
+
+#: .\templates\inc\worker_info.html:72
+msgid "gain for month"
+msgstr ""
+
+#: .\templates\inc\worker_info.html:95
+msgid "call to boss"
+msgstr ""
+
+#: .\templates\layout.html:10 .\templates\layout.html:120
+msgid "home"
+msgstr ""
+
+#: .\templates\layout_login.html:25
+msgid "login page"
+msgstr ""
+
+#: .\templates\login.html:18
+msgid "sign in to admin"
+msgstr ""
+
+#: .\templates\login.html:45
+msgid "send"
+msgstr ""
+
+#: .\templates\pages\contact.html:43
+msgid "email address"
+msgstr ""
+
+#: .\templates\pages\contact.html:49
+msgid "contact info"
+msgstr ""
+
+#: .\templates\pages\contact.html:65
+msgid "send to message"
+msgstr ""
+
+#: .\templates\pages\contact.html:66
+msgid ""
+"we will be delighted to answer your questions or solve any problem you may "
+"have. thank you for trusting us."
+msgstr ""
+
+#: .\templates\pages\contact.html:86
+msgid "telephone"
+msgstr ""
+
+#: .\templates\pages\contact.html:91
+msgid "message"
+msgstr ""

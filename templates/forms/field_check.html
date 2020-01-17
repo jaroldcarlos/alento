@@ -1,0 +1,14 @@
+{% load widget_tweaks %}
+{% if field %}
+<div class="form-group">
+    <label>{{ title|capfirst }}:</label><br>
+    {% endif %}
+    <div class="form-check">
+        {% if title %}
+        {% render_field field class="form-check-input" type="checkbox" %}
+        <label class="form-check-label">
+        {{ field.label }}
+        </label>
+    </div>
+</div>
+{% endif %}

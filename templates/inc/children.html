@@ -1,0 +1,18 @@
+{% load mptt_tags %}
+{% if item %}
+    {% if hook == 'hf' %}
+        <ul class="submenu menu vertical" data-submenu>
+            {% for items in item  %}
+                <li><a href="{% if items.url %}/{{ lang }}{{ items.url }}{% else %}{% endif %}">{{ items.name|title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% elif hook == 'hd' %}
+        <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
+            <ul class="kt-menu__subnav">
+                {% for items in item %}
+                    <li class="kt-menu__item " aria-haspopup="true"><a href="{% if items.url %}/{{ lang }}{{ items.url }}{% else %}/{{ lang }}/dashboard/{% endif %}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{ items.name|title }}</span></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endif %}

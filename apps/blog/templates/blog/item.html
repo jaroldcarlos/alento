@@ -1,0 +1,30 @@
+{% extends "blog/index.html" %}
+{% load i18n %}
+{% load static %}
+{% block blogcontent %}
+
+
+{% if items %}
+
+    {% for item  in items %}
+        <div class="blog_post margbot50 clearfix" data-animated="fadeInUp">
+            <div class="blog_post_img">
+                <img src="{{ item.image.850w.url }}" alt="" />
+                <a class="zoom" href="{{ item.get_view_url }}" ></a>
+            </div>
+            <div class="blog_post_descr">
+                <div class="blog_post_date">{{ item.date_active_ini|date:'d F Y'}}</div>
+                <a class="blog_post_title" href="{{ item.get_view_url }}" >{{ item.title|title }}</a>
+                <ul class="blog_post_info">
+                    <li><a href="javascript:void(0);" >{{ item.author }}</a></li>
+                </ul>
+                <hr>
+                <div class="blog_post_content">{{ item.description|truncatewords:19|safe}}</div>
+                <a class="read_more_btn" href="{{ item.get_view_url }}" >{% trans "read more"|title %}</a>
+            </div>
+        </div><!-- //BLOG POST -->
+    {% endfor %}
+
+{% endif %}
+
+{% endblock %}

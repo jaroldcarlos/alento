@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load widget_tweaks %}
+{% if field %}
+<div class="form-group">
+    {% comment %}
+    <label>{{ field.label|capfirst }}</label>
+    <div></div>
+    {% endcomment %}
+    <div class="custom-file">
+        {% render_field field class="custom-file-input" type="file" %}
+        <label class="custom-file-label" for="{{ field.id_for_label }}">
+            {% if field.value %}
+                {{field.value}}
+            {% else %}
+                {% trans "choose file"|capfirst %}
+            {% endif %}
+        </label>
+    </div>
+</div>
+{% endif %}

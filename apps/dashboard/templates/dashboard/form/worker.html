@@ -1,0 +1,349 @@
+{% extends 'dashboard/layout.html' %}
+{% load static %}
+{% load i18n %}
+{% block css %}
+    <link href="{% static 'dashboard/css/demo1/pages/wizard/wizard-4.css' %}" rel="stylesheet" type="text/css" />
+{% endblock css %}
+{% block content %}
+    <div class="kt-wizard-v4" id="kt_wizard_v4" data-ktwizard-state="step-first">
+
+        <!--begin: Form Wizard Nav -->
+        <div class="kt-wizard-v4__nav">
+            <div class="kt-wizard-v4__nav-items">
+                <a class="kt-wizard-v4__nav-item"  data-ktwizard-type="step" data-ktwizard-state="current">
+                    <div class="kt-wizard-v4__nav-body">
+                        <div class="kt-wizard-v4__nav-number">
+                            1
+                        </div>
+                        <div class="kt-wizard-v4__nav-label">
+                            <div class="kt-wizard-v4__nav-label-title">
+                                {% trans "datas"|capfirst %}
+                            </div>
+                            <div class="kt-wizard-v4__nav-label-desc">
+                                {% trans "add datas"|capfirst %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="kt-wizard-v4__nav-item"  data-ktwizard-type="step">
+                    <div class="kt-wizard-v4__nav-body">
+                        <div class="kt-wizard-v4__nav-number">
+                            2
+                        </div>
+                        <div class="kt-wizard-v4__nav-label">
+                            <div class="kt-wizard-v4__nav-label-title">
+                                {% trans "localition"|capfirst %}
+                            </div>
+                            <div class="kt-wizard-v4__nav-label-desc">
+                                {% trans "add location"|capfirst %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="kt-wizard-v4__nav-item"  data-ktwizard-type="step">
+                    <div class="kt-wizard-v4__nav-body">
+                        <div class="kt-wizard-v4__nav-number">
+                            3
+                        </div>
+                        <div class="kt-wizard-v4__nav-label">
+                            <div class="kt-wizard-v4__nav-label-title">
+                                {% trans "contact"|capfirst %}
+                            </div>
+                            <div class="kt-wizard-v4__nav-label-desc">
+                                {% trans "add contacts"|capfirst %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="kt-wizard-v4__nav-item"  data-ktwizard-type="step">
+                    <div class="kt-wizard-v4__nav-body">
+                        <div class="kt-wizard-v4__nav-number">
+                            4
+                        </div>
+                        <div class="kt-wizard-v4__nav-label">
+                            <div class="kt-wizard-v4__nav-label-title">
+                                {% trans "note"|capfirst %}
+                            </div>
+                            <div class="kt-wizard-v4__nav-label-desc">
+                                {% trans "add notes"|capfirst %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--end: Form Wizard Nav -->
+        <div class="kt-portlet">
+            <div class="kt-portlet__body kt-portlet__body--fit">
+                <div class="kt-grid">
+                    <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
+
+                        <!--begin: Form Wizard Form-->
+                        <form action="" method="POST" enctype="multipart/form-data" class="kt-form" id="kt_form">
+                            {% csrf_token %}
+
+                            <!--begin: Form Wizard Step 1-->
+                            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+                                <div class="kt-heading kt-heading--md">{% trans "adds the data for worker"|capfirst %}</div>
+                                <div class="kt-form__section kt-form__section--first">
+                                    <div class="kt-wizard-v4__form">
+                                        <div class="row">
+                                            <div class="col-md-6 col-xl-3">
+                                                {% include "forms/field.html" with field=worker_form.first_name %}
+                                            </div>
+                                            <div class="col-md-6 col-xl-3">
+                                                {% include "forms/field.html" with field=worker_form.last_name %}
+                                            </div>
+                                            <div class="col-md-6 col-xl-3">
+                                                {% include "forms/field.html" with field=worker_form.dni %}
+                                            </div>
+                                            <div class="col-md-6 col-xl-3">
+                                                {% include "forms/field_check.html" with field=worker_form.is_staff title=_('options')%}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--end: Form Wizard Step 1-->
+
+                            <!--begin: Form Wizard Step 2-->
+                            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                                <div class="kt-heading kt-heading--md">{% trans "adds the locations for the worker"|capfirst %}</div>
+                                <div class="kt-form__section kt-form__section--first">
+                                    <div class="kt-wizard-v4__form">
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                {% include "forms/field.html" with field=worker_form.address %}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                {% include "forms/field.html" with field=worker_form.city %}
+                                            </div>
+                                            <div class="col-md-3">
+                                                {% include "forms/field.html" with field=worker_form.state %}
+                                            </div>
+                                            <div class="col-md-3">
+                                                {% include "forms/field.html" with field=worker_form.country %}
+                                            </div>
+                                            <div class="col-md-3">
+                                                {% include "forms/field.html" with field=worker_form.postalcode %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--end: Form Wizard Step 2-->
+
+                            <!--begin: Form Wizard Step 3-->
+                            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                                <div class="kt-heading kt-heading--md">{% trans "adds the contacts for the worker"|capfirst %}</div>
+                                <div class="kt-form__section kt-form__section--first">
+                                    <div class="kt-wizard-v4__form">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                {% include "forms/field.html" with field=worker_form.email %}
+                                            </div>
+                                            <div class="col-md-6">
+                                                {% include "forms/field.html" with field=worker_form.phone1 %}
+                                            </div>
+                                            <div class="col-md-6">
+                                                {% include "forms/field.html" with field=worker_form.contact_name %}
+                                            </div>
+                                            <div class="col-md-6">
+                                                {% include "forms/field.html" with field=worker_form.contact_phone %}
+                                            </div>
+                                            <div class="col-md-6">
+                                                {% include "forms/field.html" with field=worker_form.contact_email %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--end: Form Wizard Step 3-->
+
+                            <!--begin: Form Wizard Step 4-->
+                            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                                <div class="kt-heading kt-heading--md">{% trans "add the note for the worker" %}</div>
+                                <div class="kt-form__section kt-form__section--first">
+                                    <div class="kt-wizard-v4__review">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                {% include "forms/textarea.html" with field=worker_form.note %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--end: Form Wizard Step 4-->
+
+                            <!--begin: Form Actions -->
+                            <div class="kt-form__actions">
+                                <div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+                                    {% trans "previus"|capfirst %}
+                                </div>
+                                <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
+                                    {% trans "submit"|capfirst %}
+                                </div>
+                                <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                                    {% trans "next step"|capfirst %}
+                                </div>
+                            </div>
+                            <!--end: Form Actions -->
+                        </form>
+                        <!--end: Form Wizard Form-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        $('#id_machines').select2();
+    });
+    {% if update %}
+       $(function() {
+        $( ".datepicker" ).datepicker({ format: 'dd/mm/yyyy', orientation: "bottom auto", locale: 'es'  });
+      });
+    {% else %}
+       $(function() {
+            $( ".datepicker" ).datepicker({ format: 'dd/mm/yyyy', orientation: "bottom auto", locale: 'es'  }).datepicker("setDate", new Date());;
+      });
+    {% endif %}
+// Class definition
+var KTWizard4 = function () {
+    // Base elements
+    var wizardEl;
+    var formEl;
+    var validator;
+    var wizard;
+
+    // Private functions
+    var initWizard = function () {
+        // Initialize form wizard
+        wizard = new KTWizard('kt_wizard_v4', {
+            startStep: 1,
+        });
+
+        // Validation before going to next page
+        wizard.on('beforeNext', function(wizardObj) {
+            if (validator.form() !== true) {
+                wizardObj.stop();  // don't go to the next step
+            }
+        });
+
+        wizard.on('beforePrev', function(wizardObj) {
+            if (validator.form() !== true) {
+                wizardObj.stop();  // don't go to the next step
+            }
+        });
+
+        // Change event
+        wizard.on('change', function(wizard) {
+            KTUtil.scrollTop();
+        });
+    }
+
+    var initValidation = function() {
+        validator = formEl.validate({
+            // Validate only visible fields
+            ignore: ":hidden",
+
+            // Validation rules
+            rules: {
+                //= Step 1
+                first_name: {
+                    required: true
+                },
+                last_name: {
+                    required: true
+                },
+                dni: {
+                    required: true
+                },
+                //= Step 3
+                phone1: {
+                    required: true
+                },
+                email1: {
+                    required: true,
+                },
+            },
+
+            // Display error
+            invalidHandler: function(event, validator) {
+                KTUtil.scrollTop();
+
+                swal.fire({
+                    "title": "",
+                    "text": "There are some errors in your submission. Please correct them.",
+                    "type": "error",
+                    "confirmButtonClass": "btn btn-secondary"
+                });
+            },
+
+            // Submit valid form
+            submitHandler: function (form) {
+
+            }
+        });
+    }
+
+    var initSubmit = function() {
+        var btn = formEl.find('[data-ktwizard-type="action-submit"]');
+
+        btn.on('click', function(e) {
+            e.preventDefault();
+
+            if (validator.form()) {
+                // See: src\js\framework\base\app.js
+                KTApp.progress(btn);
+                //KTApp.block(formEl);
+
+                // See: http://malsup.com/jquery/form/#ajaxSubmit
+                formEl.ajaxSubmit({
+                    success: function() {
+                        KTApp.unprogress(btn);
+                        //KTApp.unblock(formEl);
+
+                        swal.fire({
+                            "title": "",
+                            "text": "The application has been successfully submitted!",
+                            "type": "success",
+                            "confirmButtonClass": "btn btn-secondary"
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    return {
+        // public functions
+        init: function() {
+            wizardEl = KTUtil.get('kt_wizard_v4');
+            formEl = $('#kt_form');
+
+            initWizard();
+            initValidation();
+            initSubmit();
+        }
+    };
+}();
+
+jQuery(document).ready(function() {
+    KTWizard4.init();
+});
+
+
+</script>
+{% endblock js %}

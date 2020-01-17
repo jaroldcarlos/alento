@@ -1,0 +1,7 @@
+{% load widget_tweaks %}
+{% if field %}
+<div class="form-group">
+<label>{{ field.label }}</label>
+{% render_field field class="custom-select" %}
+</div>
+{% endif %}

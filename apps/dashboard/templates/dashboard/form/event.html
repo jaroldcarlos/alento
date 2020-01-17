@@ -1,0 +1,62 @@
+{% extends 'dashboard/layout.html' %}
+{% load static %}
+{% load i18n %}
+{% block css %}
+{% endblock css %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data" class="kt-form" id="kt_form">
+  {% csrf_token %}
+    <div class="row">
+      <div class="col-xl-12">
+        <!--begin::Portlet-->
+        <div class="kt-portlet kt-portlet--mobile">
+          <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+              <h3 class="kt-portlet__head-title">
+                {% trans "add event"|capfirst %} <small>{{ request.user.username }}</small>
+              </h3>
+            </div>
+          </div>
+          <div class="kt-portlet__body">
+            <div class="row">              <div class="col-xl-12">
+                {% include "forms/field.html" with field=event_form.service %}
+                {% include "forms/field.html" with field=event_form.worker %}
+                {% include "forms/field.html" with field=event_form.patient %}
+                {% include "forms/field_date.html" with field=event_form.date %}
+                {% include "forms/field_time.html" with field=event_form.start_time %}
+                {% include "forms/field_time.html" with field=event_form.end_time %}
+                {% include "forms/textarea.html" with field=event_form.description %}
+              </div>
+              <div clas="col-xl-12">
+                  <button type="submit" class="btn btn-brand">
+                      <i class="la la-check"></i>
+                      <span class="kt-hidden-mobile">
+                          {% trans "save"|title %}
+                      </span>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+{% endblock content %}
+
+{% block js %}
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        $('#id_machines').select2();
+    });
+    {% if update %}
+       $(function() {
+        $( ".datepicker" ).datepicker({ format: 'dd/mm/yyyy', orientation: "bottom auto", locale: 'es', lang: 'es'  });
+      });
+    {% else %}
+       $(function() {
+            $( ".datepicker" ).datepicker({ format: 'dd/mm/yyyy', orientation: "bottom auto", locale: 'es', lang: 'es'  }).datepicker("setDate", new Date());;
+      });
+    {% endif %}
+// Class definition
+</script>
+{% endblock js %}

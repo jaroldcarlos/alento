@@ -1,0 +1,16 @@
+beautifulsoup4==4.8.2
+Django==2.2.7
+django-bootstrap4==1.1.1
+django-js-asset==1.2.2
+django-leaflet==0.26.0
+django-modeltranslation==0.14.1
+django-mptt==0.10.0
+django-mptt-admin==1.0.0
+django-summernote==0.8.11.6
+django-widget-tweaks==1.4.5
+easy-thumbnails==2.7
+Pillow==6.2.1
+pytz==2019.3
+six==1.13.0
+soupsieve==1.9.5
+sqlparse==0.3.0

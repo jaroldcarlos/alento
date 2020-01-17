@@ -1,0 +1,20 @@
+{% load mptt_tags %}
+{% load model_tags %}
+
+{% recursetree node %}
+
+{% if hook == 'hf' %}
+    <li class="scroll_btn">
+        <a href="{% if node.url %}{{ node.url }}{% else %}{% endif %}">{{ node.name|title }}</a></span>
+    </li>
+{% elif hook == 'ff' %}
+    <ul class="links">
+        <li><a href="{% if node.url %}{{ node.url }}{% else %}{% endif %}">{{ node.name|title }}</a></li>
+    </ul>
+{% elif hook == 'hd' %}
+    <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href='{% if node.url %}/{{ lang }}{{ node.url }}{% else %}{% endif %}' class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">{{ node.name|title }}</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+        {%  children node 'hd' lang %}
+    </li>
+{% endif %}
+
+{% endrecursetree %}

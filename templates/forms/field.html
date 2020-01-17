@@ -1,0 +1,10 @@
+{% load widget_tweaks %}
+{% if field %}
+<div class="form-group">
+    {% if no_label %}
+    {% else %}
+    <label>{{ field.label|capfirst }}</label>
+    {% endif %}
+    {% render_field field class="form-control" placeholder=field.label %}
+</div>
+{% endif %}

@@ -1,0 +1,121 @@
+{% extends 'dashboard/layout.html' %}
+{% load static %}
+{% load i18n %}
+{% block css %}
+    <link href="{% static 'dashboard/css/demo1/pages/wizard/wizard-4.css' %}" rel="stylesheet" type="text/css" />
+{% endblock css %}
+{% block content %}
+<div class="row">
+    {% for item in items %}
+
+        <div class="col-xl-3">
+
+            <!--Begin::Portlet-->
+            <div class="kt-portlet kt-portlet--height-fluid">
+                <div class="kt-portlet__head kt-portlet__head--noborder">
+                    <div class="kt-portlet__head-label">
+                        <h3 class="kt-portlet__head-title">
+                        </h3>
+                    </div>
+                    {% comment %}
+
+                    <div class="kt-portlet__head-toolbar">
+                        <a href="#" class="btn btn-icon" data-toggle="dropdown">
+                            <i class="flaticon-more-1 kt-font-brand"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <ul class="kt-nav">
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-line-chart"></i>
+                                        <span class="kt-nav__link-text">Reports</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-send"></i>
+                                        <span class="kt-nav__link-text">Messages</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-pie-chart-1"></i>
+                                        <span class="kt-nav__link-text">Charts</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-avatar"></i>
+                                        <span class="kt-nav__link-text">Members</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-settings"></i>
+                                        <span class="kt-nav__link-text">Settings</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {% endcomment %}
+                </div>
+                <div class="kt-portlet__body">
+
+                    <!--begin::Widget -->
+                    <div class="kt-widget kt-widget--user-profile-2">
+                        <div class="kt-widget__head">
+                            <div class="kt-widget__media">
+                                <img class="kt-widget__img kt-hidden-" src="{% if item.image %}{{ item.image.url }}{% else %}/media/worker/default.png{% endif %}" alt="image">
+                                <div class="kt-widget__pic kt-widget__pic--success kt-font-success kt-font-boldest kt-hidden">
+                                    ChS
+                                </div>
+                            </div>
+                            <div class="kt-widget__info">
+                                <a href="#" class="kt-widget__username">
+                                    {{ item.full_name }}
+                                </a>
+                                <span class="kt-widget__desc">
+                                    {% trans "patient"|capfirst %}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="kt-widget__body">
+                            <div class="kt-widget__section">
+                                {{ item.note }}
+                            </div>
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__contact">
+                                    <span class="kt-widget__label">{% trans "email"|title %}:</span>
+                                    <a href="mailto:{{ item.user.email }}" class="kt-widget__data">{{ item.user.email }}</a>
+                                </div>
+                                <div class="kt-widget__contact">
+                                    <span class="kt-widget__label">{% trans "phone"|title %}:</span>
+                                    <a href="tel:{{ item.phone1 }}" class="kt-widget__data">{{ item.phone1 }}</a>
+                                </div>
+                                <div class="kt-widget__contact">
+                                    <span class="kt-widget__label">{% trans "address"|title %}:</span>
+                                    <span class="kt-widget__data">{{ item.address }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-widget__footer">
+                            <button type="button" class="btn btn-label-warning btn-lg btn-upper">{% trans "see profile" %}</button>
+                        </div>
+                    </div>
+
+                    <!--end::Widget -->
+                </div>
+            </div>
+
+            <!--End::Portlet-->
+        </div>
+
+    {% endfor %}
+</div>
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

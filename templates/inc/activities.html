@@ -1,0 +1,100 @@
+{% load i18n %}
+{% load static %}
+{% if items %}
+    <div class="kt-portlet">
+        <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+                <h3 class="kt-portlet__head-title">
+                    {% trans "activities"|title %}
+                </h3>
+            </div>
+            <div class="kt-portlet__head-toolbar">
+                <div class="dropdown dropdown-inline">
+                    <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="flaticon-more-1"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-fit dropdown-menu-md">
+                        {% comment %}
+
+                        <!--begin::Nav-->
+                        <ul class="kt-nav">
+                            <li class="kt-nav__head">
+                                Export Options
+                                <span data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--brand kt-svg-icon--md1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect id="bound" x="0" y="0" width="24" height="24" />
+                                            <circle id="Oval-5" fill="#000000" opacity="0.3" cx="12" cy="12" r="10" />
+                                            <rect id="Rectangle-9" fill="#000000" x="11" y="10" width="2" height="7" rx="1" />
+                                            <rect id="Rectangle-9-Copy" fill="#000000" x="11" y="7" width="2" height="2" rx="1" />
+                                        </g>
+                                    </svg> </span>
+                            </li>
+                            <li class="kt-nav__separator"></li>
+                            <li class="kt-nav__item">
+                                <a href="#" class="kt-nav__link">
+                                    <i class="kt-nav__link-icon flaticon2-drop"></i>
+                                    <span class="kt-nav__link-text">Activity</span>
+                                </a>
+                            </li>
+                            <li class="kt-nav__item">
+                                <a href="#" class="kt-nav__link">
+                                    <i class="kt-nav__link-icon flaticon2-calendar-8"></i>
+                                    <span class="kt-nav__link-text">FAQ</span>
+                                </a>
+                            </li>
+                            <li class="kt-nav__item">
+                                <a href="#" class="kt-nav__link">
+                                    <i class="kt-nav__link-icon flaticon2-link"></i>
+                                    <span class="kt-nav__link-text">Settings</span>
+                                </a>
+                            </li>
+                            <li class="kt-nav__item">
+                                <a href="#" class="kt-nav__link">
+                                    <i class="kt-nav__link-icon flaticon2-new-email"></i>
+                                    <span class="kt-nav__link-text">Support</span>
+                                    <span class="kt-nav__link-badge">
+                                        <span class="kt-badge kt-badge--success kt-badge--rounded">5</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="kt-nav__separator"></li>
+                            <li class="kt-nav__foot">
+                                <a class="btn btn-label-danger btn-bold btn-sm" href="#">Upgrade plan</a>
+                                <a class="btn btn-clean btn-bold btn-sm" href="#" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">Learn more</a>
+                            </li>
+                        </ul>
+
+                        {% endcomment %}
+                        <!--end::Nav-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kt-portlet__body">
+
+            <!--Begin::Timeline 3 -->
+            <div class="kt-timeline-v2">
+                <div class="kt-timeline-v2__items  kt-padding-top-25 kt-padding-bottom-30">
+                    {% for item in items %}
+                    <div class="kt-timeline-v2__item">
+                        <span class="kt-timeline-v2__item-time">{{ item.start_time|date:'H:i' }} </span>
+                        <div class="kt-timeline-v2__item-cricle">
+                            <i class="fa fa-genderless kt-font-danger"></i>
+                        </div>
+                        <div class="kt-timeline-v2__item-text kt-timeline-v2__item-text--bold">
+                           {{ item.patient.first_name }}
+                        </div>
+                        <div class="kt-list-pics kt-list-pics--sm kt-padding-l-20">
+                            <a href="{{item.patient.get_url_view}}"><img src="{% if item.patient.image %}{{ item.patient.image.url }}{% else %} {% static 'dashboard/img/user/default.png' %}  {% endif %}" title=""></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <!--End::Timeline 3 -->
+        </div>
+    </div>
+{% endif %}

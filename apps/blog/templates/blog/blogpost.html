@@ -1,0 +1,30 @@
+{% extends "blog/index.html" %}
+{% load i18n %}
+{% block blogcontent %}
+    <div class="single_blog_post clearfix" data-animated="fadeInUp">
+            <div class="single_blog_post_descr">
+                <div class="single_blog_post_date">{{ item.date_active_ini|date:'d F Y'}}</div>
+                <div class="single_blog_post_title"> {{item.title|title}}</div>
+                <ul class="single_blog_post_info">
+                    <li><a href="javascript:void(0);" >{{item.author}}</a></li>
+                    <li><a href="javascript:void(0);" >{{item.category|title}}</a></li>
+                    <li><a href="javascript:void(0);" >
+                        {% if item.active_status %}
+                            {% trans "active" %}
+                            {% else %}
+                            {% trans "inactive" %}
+                        {% endif %}
+                   </a></li>
+                </ul>
+            </div>
+            <div class="single_blog_post_img"><img src="{{item.image.url}}" alt="" /></div>
+
+            <div class="single_blog_post_content">
+                <p class="margbot50"></p>
+
+                {{item.description|safe}}
+            </div>
+        </div><!-- //SINGLE BLOG POST -->
+
+
+{% endblock blogcontent %}

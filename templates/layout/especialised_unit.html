@@ -1,0 +1,45 @@
+
+<!-- CONTAINER -->
+<div class="container" data-appear-top-offset="-200" data-animated="fadeInUp">
+    <!-- CASTOM TAB -->
+    <div id="myTabContent" class="tab-content">
+        {% for item in items  %}
+            {% if forloop.first  %}
+                <div class="tab-pane fade in active clearfix" id="tab{{ item.pk }}">
+                    <p class="title"><b>{{ item.name|capfirst }}</b></p>
+
+                </div>
+            {% else %}
+                <div class="tab-pane fade clearfix" id="tab{{ item.pk }}">
+                    <p class="title"><b>{{ item.name|capfirst }}</b></p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <ul id="myTab" class="nav nav-tabs">
+        {% for item in items %}
+            {% if forloop.first %}
+                <li class="active"><a class="i{{ item.pk }}" href="#tab{{ item.pk }}" data-toggle="tab" ><i></i><span></span></a></li>
+            {% else %}
+                <li class=""><a class="i{{ item.pk }}" href="#tab{{ item.pk }}" data-toggle="tab" ><i></i><span></span></a></li>
+            {% endif %}
+        {% endfor %}
+    </ul><!-- CASTOM TAB -->
+</div><!-- //CONTAINER -->
+
+{% comment %}
+<div class="container" data-appear-top-offset="-200" data-animated="fadeInUp">
+    <!-- CASTOM TAB -->
+    <div id="myTabContent" class="tab-content">
+  <h3>{% trans "uni" %}</h3>
+  <div class="row">
+    {% for item in items %}
+        <div class="col-sm-2">
+          <p>{{ item.name }}</p>
+          <img src="{{ item.image.url }}" alt="Image">
+        </div>
+    {% endfor %}
+  </div>
+</div></div>
+{% endcomment %}

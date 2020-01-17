@@ -1,0 +1,18 @@
+
+{% load i18n %}
+
+<div class="col-xl-12">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% elif message.tags == 'success'%}success{% endif %} fade show" role="alert">
+            <div class="alert-icon"><i class="{% if message.tags == 'error' %}flaticon-warning{% elif message.tags == 'success'%}flaticon2-check-mark{% endif %}"></i></div>
+            <div class="alert-text">{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}{% trans "important"|capfirst %}: {% endif %}{{ message|capfirst }}</div>
+            <div class="alert-close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="la la-close"></i></span>
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>

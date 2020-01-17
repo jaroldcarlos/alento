@@ -1,0 +1,17 @@
+{% load widget_tweaks %}
+{% if field %}
+
+<div class="form-group">
+    {% if label %}
+        <label >{{ label|capfirst }}</label>
+        {% render_field field class="form-control" %}
+    {% else %}
+        <label >{{ field.label }}</label>
+        {% render_field field class="form-control" placeholder=field.label %}
+    {% endif %}
+    {% if icon %}
+        <i class="{{ icon }}"></i>
+    {% endif %}
+</div>
+
+{% endif %}

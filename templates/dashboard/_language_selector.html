@@ -1,0 +1,57 @@
+{% load static %}
+{% load i18n %}
+<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,10px">
+    {% get_current_language as LC%}
+    {% if LC == 'es'%}
+        <span class="kt-header__topbar-icon">
+            <img class="" src="{% static 'dashboard/media/flags/016-spain.svg' %}" alt="spain" />
+        </span>
+    {% endif %}
+    {% comment %}
+    {% if LC == 'en'%}
+        <span class="kt-header__topbar-icon">
+            <img class="" src="{% static 'dashboard/media/flags/012-uk.svg' %}" alt="uk" />
+        </span>
+    {% endif %}
+    {% endcomment %}
+    {% if LC == 'pt'%}
+        <span class="kt-header__topbar-icon">
+            <img class="" src="{% static 'dashboard/media/flags/005-portugal.svg' %}" alt="portugal" />
+        </span>
+    {% endif %}
+    {% if LC == 'gl'%}
+        <span class="kt-header__topbar-icon">
+            <img class="" src="{% static 'dashboard/media/flags/021-galician.svg' %}" alt="galician" />
+        </span>
+    {% endif %}
+</div>
+<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim">
+    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
+        <li class="kt-nav__item kt-nav__item--active">
+            <a href="/pt/dashboard/" class="kt-nav__link">
+                <span class="kt-nav__link-icon"><img src="{% static 'dashboard/media/flags/005-portugal.svg' %}" alt="portugal" /></span>
+                <span class="kt-nav__link-text">{% trans "portuguese"|title %}</span>
+            </a>
+        </li>
+        <li class="kt-nav__item">
+            <a href="/es/dashboard/" class="kt-nav__link">
+                <span class="kt-nav__link-icon"><img src="{% static 'dashboard/media/flags/016-spain.svg' %}" alt="spain" /></span>
+                <span class="kt-nav__link-text">{% trans "spanish"|title %}</span>
+            </a>
+        </li>
+        <li class="kt-nav__item">
+            <a href="/gl/dashboard/" class="kt-nav__link">
+                <span class="kt-nav__link-icon"><img src="{% static 'dashboard/media/flags/021-galician.svg' %}" alt="galician" /></span>
+                <span class="kt-nav__link-text">{% trans "galician"|title %}</span>
+            </a>
+        </li>
+        {% comment %}
+        <li class="kt-nav__item">
+            <a href="/en/dashboard/" class="kt-nav__link">
+                <span class="kt-nav__link-icon"><img src="{% static 'dashboard/media/flags/012-uk.svg' %}" alt="uk" /></span>
+                <span class="kt-nav__link-text">{% trans "english"|title %}</span>
+            </a>
+        </li>
+        {% endcomment %}
+    </ul>
+</div>

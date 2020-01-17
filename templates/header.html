@@ -1,0 +1,41 @@
+{% load i18n %}
+<header
+    <!-- MENU BLOCK -->
+    <div class="menu_block">
+
+        <!-- CONTAINER -->
+        <div class="container clearfix">
+
+            <!-- LOGO -->
+            <div class="logo pull-left">
+                <a href="{% url 'home' %}" ><span class="b1">a</span><span class="b2">l</span><span class="b3">e</span><span class="b4">n</span><span class="b5">t</span><span class="b6">o</span></a>
+            </div><!-- //LOGO -->
+
+            <!-- SEARCH FORM -->
+            {% if search %}
+                <div id="search-form" class="pull-right">
+                    <form method="get" action="#">
+                        <input type="text" name="Search" value="Search" onFocus="if (this.value == 'Search') this.value = '';" onBlur="if (this.value == '') this.value = 'Search';" />
+                    </form>
+                </div><!-- SEARCH FORM -->
+            {% endif %}
+
+            <!-- MENU -->
+            {% if menu %}
+                <div class="pull-right">
+                    <nav class="navmenu center">
+                        {% if home_frontend %}
+                            <ul>
+                                {% include "_menu.html" with node=home_frontend hook='hf' lang=lang %}
+                            </ul>
+                        {% else %}
+                            <ul>
+                                <li class="scroll_btn"><a href="{% url 'home' %}" >{% trans "home" %}</a></li>
+                            </ul>
+                        {%endif%}
+                    </nav>
+                </div><!-- //MENU -->
+            {% endif %}
+        </div><!-- //MENU BLOCK -->
+    </div><!-- //CONTAINER -->
+</header>

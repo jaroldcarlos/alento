@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block meta_title       %} {{ app_name|capfirst }}|{% trans "blog"|capfirst %} {% endblock meta_title %}
+{% block meta_description %}  {% endblock meta_description %}
+{% block meta_keywords    %}  {% endblock meta_keywords %}
+
+{% block content %}
+<div id="page" class="single_page">
+
+    <!-- HEADER -->
+    {% block header %}
+        {% include "header.html" %}
+    {% endblock header %}
+
+    <!-- BREADCRUMBS -->
+    <section class="breadcrumbs_block clearfix parallax">
+        <div class="container center">
+            <h2><b>{% trans "the"|capfirst %}</b> {% trans "blog"|capfirst %}</h2>
+            <p>{% trans "publication of the latest news, articles, and free apps"|capfirst %}.</p>
+        </div>
+    </section>
+    <!-- //BREADCRUMBS -->
+
+    <section id="blog">
+        <!-- CONTAINER -->
+        <div class="container">
+
+            <!-- ROW -->
+            <div class="row">
+
+                <div class="blog_block col-lg-9 col-md-9 padbot50">
+                    {% block blogcontent %}
+
+                    {% endblock blogcontent %}
+                </div>
+                <div class="sidebar col-lg-3 col-md-3 padbot50">
+                    {% include "blog/category.html" with items=blog_categories %}
+                    {% include "blog/info.html" %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}
+{% block footer %}
+    <!-- FOOTER -->
+    <footer>
+        {% include "footer.html" %}
+    </footer>
+    <!-- //FOOTER -->
+{% endblock footer %}

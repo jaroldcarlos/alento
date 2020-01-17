@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% load  i18n %}
+
+{% block meta_title       %} {{ app_name|capfirst }}|{% trans "contact"|capfirst %} {% endblock meta_title %}
+{% block meta_description %} {% endblock meta_description %}
+{% block meta_keywords    %}  {% endblock meta_keywords %}
+
+{% block css %}
+<style>
+
+    .leaflet-container {  /* all maps */
+        width:  100%;
+        height: 100%;
+    }
+
+    #specialbigmap {
+        height: 800px;
+    }
+
+    /* Resize the "display_raw" textbox */
+    .django-leaflet-raw-textarea {
+        width: 100%;
+    }
+
+</style>
+{% endblock css %}
+
+{% block banner %}
+    {% include "_banner.html" with item=contact_us title=_('contact')%}
+{% endblock banner %}
+
+{% block content %}
+<div class="contact_info">
+    <div class="container">
+        <ul class="clearfix">
+            <li>
+                <i class="pe-7s-map-marker"></i>
+                <h4>{% trans "address"|capfirst %}</h4>
+                <span>{{ contact_us.address }}</span>
+            </li>
+            <li>
+                <i class="pe-7s-mail-open-file"></i>
+                <h4>{% trans "email address"|capfirst %}</h4>
+               <a href="mailto:{{ contact_us.email }}"> <span>{{ contact_us.email }}</span><a/>
+
+            </li>
+            <li>
+                <i class="pe-7s-phone"></i>
+                <h4>{% trans "contact info"|capfirst %}</h4>
+                <span>{{ contact_us.phone }}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--/contact_info-->
+<div class="bg_color_1">
+    <div class="container margin_80_55">
+        <div class="row justify-content-between">
+            <div class='col-lg-5'>
+                <div class="map_contact">
+                    {% include "block/_block_mapleaflet.html" with location=contact_us %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h4>{% trans "send to message"|capfirst %}</h4>
+                <p>{% trans "we will be delighted to answer your questions or solve any problem you may have. thank you for trusting us." %}</p>
+                <div id="message-contact"></div>
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            {% include "forms/field_login.html" with field=form.name label=_('name')%}
+                        </div>
+                        <div class="col-md-6">
+                            {% include "forms/field_login.html" with field=form.last_name label=_('last name')%}
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            {% include "forms/field_login.html" with field=form.email label=_('email')%}
+                        </div>
+                        <div class="col-md-6">
+                            {% include "forms/field_login.html" with field=form.telephone label=_('telephone')%}
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="form-group">
+                         {% include "forms/field_login.html" with field=form.message label=_('message')%}
+                    </div>
+
+                    <p class="add_top_30"><input type="submit" value="Submit" class="btn_1 rounded" id="submit-contact"></p>
+                </form>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /bg_color_1 -->
+{% endblock content %}

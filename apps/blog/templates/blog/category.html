@@ -1,0 +1,9 @@
+{% load i18n %}
+
+<div class="sidepanel widget_meta">
+    <ul>
+      {% for item in items %}
+            <li><a href="{{ item.get_view_url }}">{{ item.name|title }}</a></li>
+        {% endfor %}
+    </ul>
+</div><!-- //META WIDGET -->
