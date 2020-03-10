@@ -29,12 +29,13 @@ class Patient(ActiveModel):
     first_name = models.CharField(_('first name'), max_length=100, blank=True)
     last_name = models.CharField(_('last name'), max_length=100, blank=True)
     dni = models.CharField(_('dni'), max_length=9, unique=True)
-
+    email = models.EmailField(_('email'), max_length=120, default='', blank=True)
     address = models.CharField(_('address'), max_length=100, blank=True)
     postalcode = models.CharField(_('postal code'), max_length=100, blank=True)
     city = models.CharField(_('city'), max_length=100, blank=True)
     state = models.CharField(_('state'), max_length=100, blank=True)
-
+    latitude = models.CharField(_('latitude'), max_length=20, blank=True)
+    longitude = models.CharField(_('longitude'), max_length=20, blank=True)
     country = models.CharField(_('country'), max_length=100, blank=True)
 
     phone = models.CharField(_('phone'), max_length=100, blank=True)
@@ -52,5 +53,8 @@ class Patient(ActiveModel):
     def full_name(self):
         return '{} {}'.format(self.first_name, self.last_name)
 
-    # def get_absolute_url(self):
-    #     return reverse('usuario:view', kwargs={'pk': self.pk})
+    def get_view_url(self):
+        return reverse('dashboard:view_patient', kwargs={'dni': self.dni})
+
+    def get_add_event(self):
+        return reverse('dashboard:create_event', kwargs={'dni_worker': self.worker.dni, 'dni_patient': self.dni})

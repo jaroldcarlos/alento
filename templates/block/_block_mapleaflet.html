@@ -7,7 +7,7 @@
     function map_init_basic (map, options) {
         map.setView([ {{ location.latitude }}, {{ location.longitude }} ], 16);
 
-            var content = "{{ location.name|title }}"+
+            var content = "{% if location.name %}{{ location.name|title }} {% else %} {{ location.full_name }}{% endif %}"+
                       "<br />{{ location.latitude|floatformat:7 }},{{ location.longitude|floatformat:7 }}";
 
             L.marker([ {{ location.latitude }}, {{ location.longitude }} ], {

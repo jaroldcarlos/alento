@@ -61,7 +61,7 @@
         </div>
         <div class="kt-portlet__body">
             <form action="" method="POST" enctype="multipart/form-data" class="kt-form" id="kt_form">
-                            {% csrf_token %}
+                {% csrf_token %}
                 <div class="tab-content">
                     <div class="tab-pane active" id="kt_apps_user_edit_tab_1" role="tabpanel">
                         <div class="kt-form kt-form--label-right">
@@ -69,11 +69,17 @@
                                 <div class="kt-section kt-section--first">
                                     <div class="kt-section__body">
                                         <div class="row">
-                                            <div class="col-xl-6">
+                                            <div class="col-xl-3">
                                                 {% include "forms/field.html" with field=patient_form.first_name %}
                                             </div>
-                                            <div class="col-xl-6">
+                                            <div class="col-xl-3">
                                                 {% include "forms/field.html" with field=patient_form.last_name %}
+                                            </div>
+                                            <div class="col-xl-3">
+                                                {% include "forms/field.html" with field=patient_form.email %}
+                                            </div>
+                                            <div class="col-xl-3">
+                                                {% include "forms/field.html" with field=patient_form.worker %}
                                             </div>
                                         </div>
                                         <div class="row">
@@ -253,14 +259,14 @@
                             </div>
                         </div>
                     </div>
-                <div clas="col-xl-12">
-                    <button type="submit" class="btn btn-brand">
-                        <i class="la la-check"></i>
-                        <span class="kt-hidden-mobile">
-                            {% trans "save"|title %}
-                        </span>
-                    </button>
-                </div>
+                    <div clas="col-xl-12">
+                        <button type="submit" class="btn btn-brand">
+                            <i class="la la-check"></i>
+                            <span class="kt-hidden-mobile">
+                                {% trans "save"|title %}
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>

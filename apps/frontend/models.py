@@ -84,17 +84,15 @@ class Contact_us(NameModel, GeoModel):
 
 
 class Social(ActiveModel):
-    WHATSAPP = 'fi-web'
-    FACEBOOK = 'fi-social-facebook'
-    INSTAGRAM = 'fi-social-instagram'
-    LINKEDIN = 'fi-social-linkedin'
-    TWITTER = 'fi-social-twitter'
-    PINTEREST = 'fi-social-pinterest'
-    YOUTUBE = 'fi-social-youtube'
-    GOOGLE = 'fi-social-google-plus'
+    FACEBOOK = 'fa fa-facebook'
+    INSTAGRAM = 'fa fa-instagram'
+    LINKEDIN = 'fa fa-linkedin'
+    TWITTER = 'fa fa-twitter'
+    PINTEREST = 'fa fa-pinterest-square'
+    YOUTUBE = 'fa fa-youtube'
+    GOOGLE = 'fa fa-google-plus'
 
     SOCIAL_CHOICES = [
-        (WHATSAPP, 'Whatsapp'),
         (FACEBOOK, 'Facebbok'),
         (INSTAGRAM, 'Instagram'),
         (TWITTER, 'Twitter'),

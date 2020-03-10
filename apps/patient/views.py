@@ -3,11 +3,15 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
+
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.admin.views.decorators import staff_member_required
 
 from apps.patient.models import Patient
 from apps.patient.forms import PatientForm
+
+timezone_today = timezone.localtime(timezone.now()).date()
 
 
 @staff_member_required
@@ -52,3 +56,18 @@ def list_patient(request):
     }
 
     return render(request, 'dashboard/view/patient_list.html', context)
+
+
+@staff_member_required
+def view_patient(request, dni=None):
+
+    try:
+        item = Patient.objects.get(dni=dni)
+    except:
+        item = ''
+
+    context = {
+        'item': item,
+    }
+
+    return render(request, 'dashboard/view/patient_item.html', context)

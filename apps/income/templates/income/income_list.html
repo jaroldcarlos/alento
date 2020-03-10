@@ -1,0 +1,149 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+{% load custom_filters %}
+
+{% block content %}
+
+<div class="kt-portlet">
+    <div class="kt-portlet__head">
+        <div class="kt-portlet__head-label">
+            <span class="kt-portlet__head-icon">
+                <i class="flaticon-statistics"></i>
+            </span>
+            <h3 class="kt-portlet__head-title">
+                {% trans 'Complete List' %}
+            </h3>
+        </div>
+        <div class="kt-portlet__head-toolbar">
+            <div class="kt-portlet__head-actions">
+                <a href="{% url 'income:income_create' %}" ><i class="fa fa-plus"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="kt-portlet__body">
+        {% if expense_list %}
+            <table
+                id="datatable1"
+                class="table table-striped table-bordered table-hover
+                       table-checkable order-column">
+                <thead>
+                    <tr>
+                        <th>Nº</th>
+                        <th>{% trans 'date' %}</th>
+                        <th>{% trans 'agent' %}</th>
+                        <th>{% trans 'local' %}</th>
+                        <th>{% trans 'status' %}</th>
+                        <th>{% trans 'total' %}</th>
+                        <th>{% trans 'machine' %}</th>
+                        {% if edit %}
+                            <th>{% trans "Update" %}</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for item in expense_list %}
+                    <tr class="odd gradeX" style="background-color: #F59898 !important;" >
+                        <td style="background-color: #F59898 !important;">
+                        {% if item.invoice_file %}
+                            <a href="{{ item.invoice_file.url }}" target="expense">
+                                {{ item.invoice_number }}
+                            </a>
+                        {% else %}
+                            {{ item.invoice_number }}
+                        {% endif %}
+                        </td>
+                        <td data-order="{{ item.date|date:'d-m-Y' }}">
+                            {{ item.date|date:'d/m/Y' }}
+                        </td>
+                        <td>
+                            {{ item.user|default:"" }}
+                        </td>
+                        <td >
+                            {{ item.local|default:"" }}
+                        </td>
+                        <td data-order="{{ item.date_payment|date:'Y-m-d' }}"
+                            class="">
+                            {% if item.date_payment %}
+                                <span class="kt-badge kt-badge--inline kt-badge--success" title="{{ item.date_payment }}">{% trans "paid" %}</span>
+                            {%else%}
+                                <span class="kt-badge kt-badge--inline kt-badge--warning">{% trans "pending" %}</span>
+                            {% endif %}
+                        </td>
+                        <td>-{{ item.total | currency }}</td>
+                        <td>{{ item.machine }}</td>
+                        {% if edit %}
+                        <td>
+                            <a
+                                href="{{ item.get_absolute_url }}"
+                                target="update_expense" title="{% trans 'Update' %}">
+                                <i class="flaticon-cogwheel-1"></i>
+                            </a>
+                        </td>
+                        {% endif %}
+                    </tr>
+                  {% endfor %}
+                  {% for item in income_list %}
+                    <tr class="odd gradeX">
+                        <td>
+                        {% if item.invoice_file %}
+                            <a href="{{ item.invoice_file.url }}" target="income">
+                                {{ item.invoice_number }}
+                            </a>
+                        {% else %}
+                            {{ item.invoice_number }}
+                        {% endif %}
+                        </td>
+                        <td data-order="{{ item.date|date:'d-m-Y' }}">
+                            {{ item.date|date:'d/m/Y' }}
+                        </td>
+                        <td>
+                            {{ item.user|default:"" }}
+                        </td>
+                        <td >
+                            {{ item.local|default:"" }}
+                        </td>
+                        <td data-order="{{ item.date_payment|date:'Y-m-d' }}"
+                            class="">
+                            {% if item.date_payment %}
+                                <span class="kt-badge kt-badge--inline kt-badge--success" title="{{ item.date_payment }}">{% trans "paid" %}</span>
+                            {%else%}
+                                <span class="kt-badge kt-badge--inline kt-badge--warning">{% trans "pending" %}</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ item.total | currency }}</td>
+                        <td>{{ item.machine }}</td>
+                        {% if edit %}
+                        <td>
+                            <a
+                                href="{{ item.get_absolute_url }}"
+                                target="update_income" title="{% trans 'Update' %}">
+                                <i class="flaticon-cogwheel-1"></i>
+                            </a>
+                        </td>
+                        {% endif %}
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+            </table>
+            {% else %}
+              {% trans 'No Incomes' %}
+            {% endif %}
+        </div>
+    </div>
+    <!-- END SAMPLE TABLE PORTLET-->
+
+
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+    $(document).ready( function () {
+    $('#datatable1').DataTable();
+    } );
+    document.addEventListener("DOMContentLoaded", function(event) {
+    $( ".datepicker" ).datepicker({ format: 'dd-mm-yyyy' }).datepicker();;
+    });
+    </script>
+{% endblock js %}
+

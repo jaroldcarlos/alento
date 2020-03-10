@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'apps.patient',
     'apps.schedule',
     'apps.service',
+
 ]
 
 MIDDLEWARE = [
@@ -188,7 +189,8 @@ INDEX_TITLE = _('Welcome to Alento')
 THUMBNAIL_ALIASES = {
     '': {
         '850w': {'size': (850, 350), 'crop': True},
-    },
+        '90w': {'size': (90, 90), 'crop': True},
+         },
 }
 
 LEAFLET_CONFIG = {

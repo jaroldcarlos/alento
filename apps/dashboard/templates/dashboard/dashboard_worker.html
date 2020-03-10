@@ -18,7 +18,7 @@
     <div class="kt-portlet__body">
         <div class="accordion  accordion-toggle-arrow" id="accordionExample4">
         {% for item in request.user.worker.patient.all %}
-            {% show_table request.user item %}
+            {% show_table request.user item%}
         {% endfor %}
         </div>
     </div>

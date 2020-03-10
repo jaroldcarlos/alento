@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+
+{% block seotitle  %}{% trans "Income"   as seotitle  %}{{  seotitle|title }}{% endblock %}
+{% block pagetitle %}{% trans "Income"   as pagetitle %}{{ pagetitle|title }}{% endblock %}
+{% block subtitle  %}{% trans "delete" as subtitle  %}{{  subtitle|title }}{% endblock %}
+
+{% block content %}
+<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption font-red-sunglo">
+          <i class="icon-speech font-red-sunglo"></i>
+          <span class="caption-subject bold uppercase">
+            {% blocktrans with  item=object.invoice_number %}¿Delete income | {{ item }}?{% endblocktrans %}
+          </span>
+          <span class="caption-helper">{% trans 'answer required to continue...' %}</span>
+        </div>
+        <div class="actions"></div>
+    </div>
+    <div class="portlet-body">
+      <form action="" method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">{% trans 'Yes, delete' %}</button>
+        <a class="btn btn-default" href="{% url 'income:income_list' %}">{% trans 'Cancel' %}</a>
+      </form>
+  </div>
+</div>
+{% endblock content %}

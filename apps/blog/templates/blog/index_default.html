@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block meta_title       %} {{ app_name|capfirst }}|{% trans "blog"|capfirst %} {% endblock meta_title %}
+{% block meta_description %}  {% endblock meta_description %}
+{% block meta_keywords    %}  {% endblock meta_keywords %}
+
+{% block content %}
+<section id="blog">
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <!-- ROW -->
+        <div class="row">
+
+            <div class="blog_block col-lg-9 col-md-9 padbot50">
+                {% include "blog/item.html" with items=blogs %}
+            </div>
+            <div class="sidebar col-lg-3 col-md-3 padbot50">
+                {% include "blog/category.html" with items=blog_categories %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

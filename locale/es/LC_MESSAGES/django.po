@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 13:50+0100\n"
+"POT-Creation-Date: 2020-03-07 15:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,6 +65,7 @@ msgid "name image"
 msgstr "nombre de imagen"
 
 #: .\apps\blog\models.py:56 .\apps\blog\templates\blog\index.html:5
+#: .\apps\blog\templates\blog\index.html:20
 #: .\apps\blog\templates\blog\index_default.html:5
 msgid "blog"
 msgstr "blog"
@@ -73,9 +74,27 @@ msgstr "blog"
 msgid "blogs"
 msgstr "blogs"
 
+#: .\apps\blog\templates\blog\blogpost.html:13
+#: .\apps\dashboard\templates\dashboard\view\blog_list.html:124
+#: .\apps\frontend\admin.py:49
+msgid "active"
+msgstr "activar"
+
+#: .\apps\blog\templates\blog\blogpost.html:15
+msgid "inactive"
+msgstr "desactivado"
+
+#: .\apps\blog\templates\blog\index.html:20
+msgid "the"
+msgstr "el"
+
+#: .\apps\blog\templates\blog\index.html:21
+msgid "publication of the latest news, articles, and free apps"
+msgstr ""
+
 #: .\apps\blog\templates\blog\info.html:4
 msgid "about"
-msgstr ""
+msgstr "sobre"
 
 #: .\apps\blog\templates\blog\info.html:5
 msgid ""
@@ -84,9 +103,9 @@ msgid ""
 "standard than male politicians are held to."
 msgstr ""
 
-#: .\apps\blog\templates\blog\item.html:42
+#: .\apps\blog\templates\blog\item.html:23
 msgid "read more"
-msgstr ""
+msgstr "leer más"
 
 #: .\apps\blog\views.py:48
 msgid "blog was successfully created"
@@ -96,7 +115,7 @@ msgstr "el blog ha sido creado satisfactoriamente"
 msgid "please correct the error below."
 msgstr "por favor, corriga el error"
 
-#: .\apps\dashboard\templates\dashboard\dashboard.html:11
+#: .\apps\dashboard\templates\dashboard\dashboard_worker.html:14
 msgid "this month's jobs"
 msgstr "trabajos para este mes"
 
@@ -120,19 +139,26 @@ msgstr "téxtos"
 msgid "Seo"
 msgstr ""
 
-#: .\apps\dashboard\templates\dashboard\form\event.html:16
-#, fuzzy
-#| msgid "add notes"
-msgid "add event"
-msgstr "añadir notas"
+#: .\apps\dashboard\templates\dashboard\form\event.html:20
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:20
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:21
+#: .\templates\dashboard\_header_menu.html:7
+#: .\templates\dashboard\layout.html:23 .\templates\dashboard\layout.html:927
+msgid "dashboard"
+msgstr "panel de trabajo"
 
-#: .\apps\dashboard\templates\dashboard\form\event.html:34
-#: .\apps\dashboard\templates\dashboard\form\patient.html:261
+#: .\apps\dashboard\templates\dashboard\form\event.html:115
+msgid "add event"
+msgstr "añadir evento"
+
+#: .\apps\dashboard\templates\dashboard\form\event.html:138
+#: .\apps\dashboard\templates\dashboard\form\patient.html:267
 msgid "save"
 msgstr "guardar"
 
 #: .\apps\dashboard\templates\dashboard\form\patient.html:19
 #: .\apps\dashboard\templates\dashboard\form\worker.html:20
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:292
 msgid "datas"
 msgstr "datos"
 
@@ -162,7 +188,7 @@ msgid "add contacts"
 msgstr "añadir contactos"
 
 #: .\apps\dashboard\templates\dashboard\form\worker.html:65
-#: .\apps\patient\models.py:46 .\apps\worker\models.py:43
+#: .\apps\patient\models.py:47 .\apps\worker\models.py:43
 msgid "note"
 msgstr "nota"
 
@@ -215,6 +241,7 @@ msgstr "auxiliar"
 #: .\apps\dashboard\templates\dashboard\print\event.html:31
 #: .\apps\dashboard\templates\dashboard\print\event.html:91
 #: .\apps\dashboard\templates\dashboard\view\event_list.html:33
+#: .\apps\expense\models.py:19 .\apps\income\models.py:20
 #: .\apps\worker\models.py:15 .\core\abstract.py:270
 msgid "user"
 msgstr "usuario"
@@ -225,6 +252,8 @@ msgstr "id"
 
 #: .\apps\dashboard\templates\dashboard\print\event.html:51
 #: .\apps\dashboard\templates\dashboard\view\event_list.html:45
+#: .\apps\expense\templates\expense\expense_list.html:32
+#: .\apps\income\templates\income\income_list.html:32
 #: .\apps\schedule\models.py:37 .\core\abstract.py:290
 #: .\templates\inc\table_patient.html:26
 #: .\templates\inc\table_patient_default.html:28
@@ -262,7 +291,8 @@ msgstr "comentarios"
 
 #: .\apps\dashboard\templates\dashboard\print\event.html:74
 #: .\apps\dashboard\templates\dashboard\view\event_list.html:48
-#: .\core\abstract.py:294
+#: .\apps\expense\templates\expense\expense_list.html:36
+#: .\apps\income\templates\income\income_list.html:36 .\core\abstract.py:294
 msgid "total"
 msgstr "total"
 
@@ -278,17 +308,12 @@ msgstr "acaba"
 msgid "edit blog"
 msgstr "editar blog"
 
-#: .\apps\dashboard\templates\dashboard\view\blog_list.html:124
-#: .\apps\frontend\admin.py:49
-msgid "active"
-msgstr "activar"
-
 #: .\apps\dashboard\templates\dashboard\view\blog_list.html:126
 msgid "desactive"
 msgstr "desactivar"
 
 #: .\apps\dashboard\templates\dashboard\view\calendar_list.html:16
-#: .\core\abstract.py:418
+#: .\core\abstract.py:418 .\templates\inc\calendar.html:12
 msgid "schedule"
 msgstr "horario"
 
@@ -297,31 +322,44 @@ msgid "events list"
 msgstr "lista de eventos"
 
 #: .\apps\dashboard\templates\dashboard\view\event_list.html:36
-#: .\apps\dashboard\views.py:35 .\core\templatetags\custom_filters.py:199
-#: .\core\utils.py:113
+#: .\apps\dashboard\views.py:38
+#: .\apps\expense\templates\expense\expense_detail.html:44
+#: .\core\templatetags\custom_filters.py:199 .\core\utils.py:113
 msgid "month"
 msgstr "mes"
 
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:23
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:185
 #: .\apps\dashboard\templates\dashboard\view\patient_list.html:81
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:599
 #: .\apps\schedule\models.py:31
 msgid "patient"
 msgstr "paciente"
 
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:215
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:316
 #: .\apps\dashboard\templates\dashboard\view\patient_list.html:91
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:223
 #: .\apps\dashboard\templates\dashboard\view\worker_list.html:96
-#: .\apps\frontend\models.py:81 .\core\abstract.py:88
-#: .\templates\pages\contact.html:83
+#: .\apps\frontend\models.py:81 .\apps\patient\models.py:32
+#: .\core\abstract.py:88 .\templates\pages\contact.html:83
 msgid "email"
 msgstr "email"
 
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:219
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:310
 #: .\apps\dashboard\templates\dashboard\view\patient_list.html:95
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:227
 #: .\apps\dashboard\templates\dashboard\view\worker_list.html:100
-#: .\apps\frontend\models.py:82 .\apps\patient\models.py:40
+#: .\apps\frontend\models.py:82 .\apps\patient\models.py:41
 #: .\apps\worker\models.py:36 .\apps\worker\models.py:37 .\core\abstract.py:87
 msgid "phone"
 msgstr "teléfono"
 
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:223
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:331
 #: .\apps\dashboard\templates\dashboard\view\patient_list.html:99
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:231
 #: .\apps\dashboard\templates\dashboard\view\worker_list.html:104
 #: .\apps\frontend\models.py:83 .\apps\patient\models.py:33
 #: .\apps\worker\models.py:29 .\core\abstract.py:89
@@ -329,20 +367,285 @@ msgstr "teléfono"
 msgid "address"
 msgstr "dirección"
 
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:229
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:237
+msgid "send a message"
+msgstr "enviar mensaje"
+
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:304
+#: .\apps\patient\models.py:43 .\apps\worker\models.py:39
+msgid "contact name"
+msgstr "nombre de contacto"
+
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:311
+#: .\apps\patient\models.py:44 .\apps\worker\models.py:40
+msgid "contact phone"
+msgstr "teléfono de contacto"
+
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:317
+#: .\apps\patient\models.py:45 .\apps\worker\models.py:41
+msgid "contact email"
+msgstr "email de contacto"
+
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:338
+#: .\apps\patient\models.py:35 .\apps\worker\models.py:31
+msgid "city"
+msgstr "ciudad"
+
+#: .\apps\dashboard\templates\dashboard\view\patient_item.html:345
+#: .\apps\patient\models.py:36 .\apps\worker\models.py:32
+msgid "state"
+msgstr "estado"
+
 #: .\apps\dashboard\templates\dashboard\view\patient_list.html:105
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:603
 #: .\apps\dashboard\templates\dashboard\view\worker_list.html:110
 msgid "see profile"
 msgstr "mirar perfil"
 
-#: .\apps\dashboard\templates\dashboard\view\worker_list.html:83
-msgid "administrador"
-msgstr "administrador"
-
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:24
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:189
 #: .\apps\dashboard\templates\dashboard\view\worker_list.html:85
 #: .\apps\patient\models.py:15 .\apps\schedule\models.py:23
 #: .\templates\dashboard\_user_topbar_menu.html:31
 msgid "worker"
 msgstr "trabajador"
+
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:187
+msgid "administrator"
+msgstr "administrador"
+
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:416
+msgid "finance sumary"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:486
+#, fuzzy
+#| msgid "month"
+msgid "last month"
+msgstr "mes"
+
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:490
+msgid "current month"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:496
+#, fuzzy
+#| msgid "this month's jobs"
+msgid "last month's events"
+msgstr "trabajos para este mes"
+
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:500
+msgid "month's events"
+msgstr ""
+
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:535
+msgid "assigned patients"
+msgstr "pacientes asignados"
+
+#: .\apps\dashboard\templates\dashboard\view\worker_item.html:602
+msgid "add events"
+msgstr "añadir eventos"
+
+#: .\apps\dashboard\templates\dashboard\view\worker_list.html:83
+msgid "administrador"
+msgstr "administrador"
+
+#: .\apps\expense\models.py:13 .\apps\income\models.py:13
+msgid "Only PDF files allowed"
+msgstr ""
+
+#: .\apps\expense\models.py:25
+#: .\apps\expense\templates\expense\expense_list.html:34
+#: .\apps\income\models.py:33
+#: .\apps\income\templates\income\income_list.html:34
+msgid "local"
+msgstr "local"
+
+#: .\apps\expense\models.py:27 .\apps\income\models.py:27
+msgid "invoice file"
+msgstr "archivo"
+
+#: .\apps\expense\models.py:33
+#: .\apps\expense\templates\expense\expense_list.html:37
+#: .\apps\income\models.py:34
+#: .\apps\income\templates\income\income_list.html:37
+msgid "machine"
+msgstr ""
+
+#: .\apps\expense\models.py:37
+msgid "Expense"
+msgstr ""
+
+#: .\apps\expense\models.py:38
+msgid "Expenses"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_confirm_delete.html:4
+#: .\apps\expense\templates\expense\expense_confirm_delete.html:5
+#: .\apps\income\models.py:37
+#: .\apps\income\templates\income\income_confirm_delete.html:4
+#: .\apps\income\templates\income\income_confirm_delete.html:5
+#, fuzzy
+#| msgid "income of"
+msgid "Income"
+msgstr "ingreso de"
+
+#: .\apps\expense\templates\expense\expense_confirm_delete.html:6
+#: .\apps\income\templates\income\income_confirm_delete.html:6
+msgid "delete"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_confirm_delete.html:14
+#: .\apps\income\templates\income\income_confirm_delete.html:14
+#, python-format
+msgid "¿Delete income | %(item)s?"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_confirm_delete.html:16
+#: .\apps\income\templates\income\income_confirm_delete.html:16
+msgid "answer required to continue..."
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_confirm_delete.html:23
+#: .\apps\income\templates\income\income_confirm_delete.html:23
+msgid "Yes, delete"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_confirm_delete.html:24
+#: .\apps\income\templates\income\income_confirm_delete.html:24
+msgid "Cancel"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:23
+msgid "Data"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:27
+msgid "WALLBILL NO."
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:31
+msgid "WALLBILL TO."
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:43
+msgid "Machine"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:44
+#: .\core\templatetags\custom_filters.py:198 .\core\utils.py:112
+msgid "year"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:45
+#, fuzzy
+#| msgid "country"
+msgid "amount"
+msgstr "país"
+
+#: .\apps\expense\templates\expense\expense_detail.html:67
+msgid "AGENT"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:68
+msgid "EMAIL"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:69
+msgid "DUE DATE"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:70
+msgid "TOTAL AMOUNT"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:87
+msgid "Download Wallbill"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_detail.html:88
+msgid "Print Wallbill"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_form.html:35
+#: .\apps\income\templates\income\income_form.html:40
+msgid "Save "
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_form.html:36
+#: .\apps\income\templates\income\income_form.html:41
+msgid "Go Back"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_form.html:38
+#: .\apps\income\templates\income\income_form.html:43
+msgid "Delete"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_list.html:14
+msgid "Complete List of Expense"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_list.html:33
+#: .\apps\income\templates\income\income_list.html:33
+msgid "agent"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_list.html:35
+#: .\apps\income\templates\income\income_list.html:35
+#, fuzzy
+#| msgid "state"
+msgid "status"
+msgstr "estado"
+
+#: .\apps\expense\templates\expense\expense_list.html:39
+#: .\apps\expense\templates\expense\expense_list.html:78
+#: .\apps\income\templates\income\income_list.html:39
+#: .\apps\income\templates\income\income_list.html:78
+#: .\apps\income\templates\income\income_list.html:119
+#, fuzzy
+#| msgid "date"
+msgid "Update"
+msgstr "fecha"
+
+#: .\apps\expense\templates\expense\expense_list.html:67
+#: .\apps\income\templates\income\income_list.html:67
+#: .\apps\income\templates\income\income_list.html:108
+msgid "paid"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_list.html:69
+#: .\apps\income\templates\income\income_list.html:69
+#: .\apps\income\templates\income\income_list.html:110
+msgid "pending"
+msgstr ""
+
+#: .\apps\expense\templates\expense\expense_list.html:88
+msgid "No Expense"
+msgstr ""
+
+#: .\apps\expense\views.py:33
+#, fuzzy
+#| msgid "patient was successfully created"
+msgid "Expense was successfully Created!"
+msgstr "el paciente ha sido creado satisfactoriamente"
+
+#: .\apps\expense\views.py:36 .\apps\expense\views.py:79
+#: .\apps\income\views.py:35 .\apps\income\views.py:71
+#: .\apps\patient\views.py:40 .\apps\schedule\views.py:60
+msgid "Please correct the error below."
+msgstr "por favor, corriga el error"
+
+#: .\apps\expense\views.py:76
+#, fuzzy
+#| msgid "event was successfully created"
+msgid "expense was successfully Update!"
+msgstr "el evento ha sido creado satisfactoriamente"
+
+#: .\apps\expense\views.py:115 .\apps\income\views.py:94
+msgid "Item {} deleted"
+msgstr ""
 
 #: .\apps\frontend\admin.py:18 .\apps\frontend\admin.py:53
 msgid "Information"
@@ -368,7 +671,7 @@ msgstr "categoría de enlace"
 msgid "category links"
 msgstr "categoría de enlaces"
 
-#: .\apps\frontend\models.py:31 .\apps\frontend\models.py:107
+#: .\apps\frontend\models.py:31 .\apps\frontend\models.py:105
 #: .\core\abstract.py:272
 msgid "url"
 msgstr "url"
@@ -389,11 +692,11 @@ msgstr "enlace"
 msgid "links"
 msgstr "enlaces"
 
-#: .\apps\frontend\models.py:106
+#: .\apps\frontend\models.py:104
 msgid "network"
 msgstr "network"
 
-#: .\apps\frontend\models.py:110 .\apps\frontend\models.py:111
+#: .\apps\frontend\models.py:108 .\apps\frontend\models.py:109
 msgid "Social"
 msgstr "social"
 
@@ -401,15 +704,41 @@ msgstr "social"
 msgid "We will soon give you an answer to your message"
 msgstr "responderemos lo más rápido posible su mensaje"
 
-#: .\apps\frontend\views.py:41 .\apps\worker\views.py:84
+#: .\apps\frontend\views.py:41 .\apps\worker\views.py:95
 #: .\core\context_processors.py:7
 msgid "alento"
 msgstr "alento"
 
 #: .\apps\frontend\views.py:46 .\apps\frontend\views.py:50
-#: .\apps\worker\views.py:88
+#: .\apps\worker\views.py:99
 msgid "Invalid header found."
 msgstr "cabecera inválida"
+
+#: .\apps\income\models.py:38
+#, fuzzy
+#| msgid "income list"
+msgid "Incomes"
+msgstr "lista de entradas"
+
+#: .\apps\income\templates\income\income_list.html:14
+msgid "Complete List"
+msgstr ""
+
+#: .\apps\income\templates\income\income_list.html:130
+msgid "No Incomes"
+msgstr ""
+
+#: .\apps\income\views.py:32
+#, fuzzy
+#| msgid "worker was successfully created"
+msgid "Income was successfully Created!"
+msgstr "trabajador ha sido creado satisfactoriamente"
+
+#: .\apps\income\views.py:68
+#, fuzzy
+#| msgid "worker was successfully created"
+msgid "income was successfully Update!"
+msgstr "trabajador ha sido creado satisfactoriamente"
 
 #: .\apps\patient\models.py:29 .\core\abstract.py:84
 msgid "first name"
@@ -420,7 +749,7 @@ msgstr "nombre"
 msgid "last name"
 msgstr "apellido"
 
-#: .\apps\patient\models.py:31
+#: .\apps\patient\models.py:31 .\apps\worker\models.py:33
 msgid "dni"
 msgstr ""
 
@@ -428,45 +757,29 @@ msgstr ""
 msgid "postal code"
 msgstr "codigo postal"
 
-#: .\apps\patient\models.py:35 .\apps\worker\models.py:31
-msgid "city"
-msgstr "ciudad"
+#: .\apps\patient\models.py:37 .\core\abstract.py:229
+msgid "latitude"
+msgstr ""
 
-#: .\apps\patient\models.py:36 .\apps\worker\models.py:32
-msgid "state"
-msgstr "estado"
+#: .\apps\patient\models.py:38 .\core\abstract.py:230
+msgid "longitude"
+msgstr ""
 
-#: .\apps\patient\models.py:38 .\apps\worker\models.py:34
+#: .\apps\patient\models.py:39 .\apps\worker\models.py:34
 msgid "country"
 msgstr "país"
 
-#: .\apps\patient\models.py:42 .\apps\worker\models.py:39
-msgid "contact name"
-msgstr "nombre de contacto"
-
-#: .\apps\patient\models.py:43 .\apps\worker\models.py:40
-msgid "contact phone"
-msgstr "teléfono de contacto"
-
-#: .\apps\patient\models.py:44 .\apps\worker\models.py:41
-msgid "contact email"
-msgstr "email de contacto"
-
-#: .\apps\patient\models.py:47 .\apps\worker\models.py:44
+#: .\apps\patient\models.py:48 .\apps\worker\models.py:44
 msgid "private comment"
 msgstr "comentario privado"
 
-#: .\apps\patient\views.py:30
-msgid "patient was successfully created"
-msgstr "el blog ha sido creado satisfactoriamente"
-
 #: .\apps\patient\views.py:34
-msgid "the patient already exist"
-msgstr ""
+msgid "patient was successfully created"
+msgstr "el paciente ha sido creado satisfactoriamente"
 
-#: .\apps\patient\views.py:36 .\apps\schedule\views.py:46
-msgid "Please correct the error below."
-msgstr "por favor, corriga el error"
+#: .\apps\patient\views.py:38
+msgid "the patient already exist"
+msgstr "el paciente ya existe"
 
 #: .\apps\schedule\models.py:14
 msgid "personal and domestic services"
@@ -500,55 +813,57 @@ msgstr "hora de inicio"
 msgid "end hour of the event"
 msgstr "hora de terminación"
 
-#: .\apps\schedule\models.py:43 .\apps\schedule\models.py:44
+#: .\apps\schedule\models.py:44 .\apps\schedule\models.py:45
 msgid "Scheduling"
 msgstr "Horarios"
 
-#: .\apps\schedule\views.py:36
+#: .\apps\schedule\views.py:50
 msgid "event was successfully created"
 msgstr "el evento ha sido creado satisfactoriamente"
 
-#: .\apps\schedule\views.py:94
+#: .\apps\schedule\views.py:62
+#, fuzzy
+#| msgid "the patient already exist"
+msgid "worker or patient no exist"
+msgstr "el paciente ya existe"
+
+#: .\apps\schedule\views.py:112
 msgid "{}hours  {}minutes"
 msgstr "{}horas {}minutos"
 
 #: .\apps\service\models.py:28 .\apps\service\models.py:55
-#, fuzzy
-#| msgid "other service"
 msgid "category service"
-msgstr "otros servicios"
+msgstr "categoria de servicio"
 
 #: .\apps\service\models.py:29 .\apps\service\models.py:56
-#, fuzzy
-#| msgid "categories"
 msgid "categories services"
-msgstr "categorías"
+msgstr "categoria de servicios"
 
 #: .\apps\service\models.py:70
 msgid "Specialised Unit"
-msgstr ""
+msgstr "unidad especializada"
 
 #: .\apps\service\models.py:71
 msgid "Specialised Units"
-msgstr ""
+msgstr "unidades especializadas"
 
-#: .\apps\worker\views.py:35
+#: .\apps\worker\views.py:46
 msgid "username and password are not correct"
 msgstr "usuario o contraseña no son correctas"
 
-#: .\apps\worker\views.py:85
+#: .\apps\worker\views.py:96
 msgid "Welcome to alento, your credentials are: user: "
 msgstr "Bienvenido a alento, tus credenciales son: usuario:"
 
-#: .\apps\worker\views.py:85
+#: .\apps\worker\views.py:96
 msgid " password: "
 msgstr "contraseña: "
 
-#: .\apps\worker\views.py:90
+#: .\apps\worker\views.py:101
 msgid "worker was successfully created"
 msgstr "trabajador ha sido creado satisfactoriamente"
 
-#: .\apps\worker\views.py:93
+#: .\apps\worker\views.py:104
 msgid "please correct the error below"
 msgstr "porfavor corrija los errores"
 
@@ -612,14 +927,6 @@ msgstr ""
 
 #: .\core\abstract.py:208
 msgid "image 8"
-msgstr ""
-
-#: .\core\abstract.py:229
-msgid "latitude"
-msgstr ""
-
-#: .\core\abstract.py:230
-msgid "longitude"
 msgstr ""
 
 #: .\core\abstract.py:243
@@ -712,36 +1019,32 @@ msgstr ""
 msgid "slug"
 msgstr ""
 
-#: .\core\settings.py:162 .\templates\dashboard\_language_selector.html:46
+#: .\core\settings.py:169 .\templates\dashboard\_language_selector.html:46
 msgid "galician"
 msgstr "gallego"
 
-#: .\core\settings.py:163 .\templates\dashboard\_language_selector.html:40
+#: .\core\settings.py:170 .\templates\dashboard\_language_selector.html:40
 msgid "spanish"
 msgstr "español"
 
-#: .\core\settings.py:164 .\templates\dashboard\_language_selector.html:34
+#: .\core\settings.py:171 .\templates\dashboard\_language_selector.html:34
 msgid "portuguese"
 msgstr "portugués"
 
-#: .\core\settings.py:165
+#: .\core\settings.py:172
 msgid "english"
 msgstr "ingles"
 
-#: .\core\settings.py:177 .\core\settings.py:178
+#: .\core\settings.py:184 .\core\settings.py:185
 msgid "Alento"
 msgstr ""
 
-#: .\core\settings.py:179
+#: .\core\settings.py:186
 msgid "Welcome to Alento"
 msgstr "bienvenido a alento"
 
 #: .\core\templatetags\custom_filters.py:184 .\core\utils.py:91
 msgid "now"
-msgstr ""
-
-#: .\core\templatetags\custom_filters.py:198 .\core\utils.py:112
-msgid "year"
 msgstr ""
 
 #: .\core\templatetags\custom_filters.py:200 .\core\utils.py:114
@@ -776,19 +1079,6 @@ msgstr "página de administrar"
 msgid "important"
 msgstr "importante"
 
-#: .\templates\block\_block_socials.html:3
-msgid "social networks"
-msgstr "redes sociales"
-
-#: .\templates\block\_block_socials.html:7
-msgid "follow us"
-msgstr "siguenos"
-
-#: .\templates\dashboard\_header_menu.html:7
-#: .\templates\dashboard\layout.html:23 .\templates\dashboard\layout.html:926
-msgid "dashboard"
-msgstr "panel de trabajo"
-
 #: .\templates\dashboard\_header_menu.html:17
 msgid "search"
 msgstr "buscar"
@@ -813,27 +1103,97 @@ msgstr "configuracion de usurio y más"
 msgid "sign out"
 msgstr "cerrar sesión"
 
-#: .\templates\dashboard\layout.html:933
-msgid "today"
-msgstr "hoy"
-
 #: .\templates\forms\field_file.html:16
 msgid "choose file"
 msgstr "escoja archivo"
 
+#: .\templates\header.html:33 .\templates\layout.html:11
+msgid "home"
+msgstr "inicio"
+
 #: .\templates\inc\activities.html:8
-#, fuzzy
-#| msgid "active"
 msgid "activities"
-msgstr "activar"
+msgstr "actividades"
+
+#: .\templates\inc\admin_info.html:22 .\templates\inc\worker_info.html:22
+msgid "events for today"
+msgstr "eventos para hoy"
+
+#: .\templates\inc\admin_info.html:47
+msgid "events for this month"
+msgstr "eventos para este mes"
+
+#: .\templates\inc\admin_info.html:69
+msgid "list worker"
+msgstr "lista de trabajadores"
+
+#: .\templates\inc\admin_info.html:72
+msgid "number of workers"
+msgstr "número de trabajadores"
+
+#: .\templates\inc\admin_info.html:94
+msgid "list patient"
+msgstr "lista de pacientes"
+
+#: .\templates\inc\admin_info.html:97
+msgid "number of patients"
+msgstr "número de pacientes"
+
+#: .\templates\inc\options_admin.html:27
+msgid "patients"
+msgstr "pacientes"
+
+#: .\templates\inc\options_admin.html:29
+msgid "add new patient"
+msgstr "añadir nuevo paciente"
+
+#: .\templates\inc\options_admin.html:30
+msgid "patient list"
+msgstr "lista de pacientes"
+
+#: .\templates\inc\options_admin.html:43
+msgid "workers"
+msgstr "trabajadores"
+
+#: .\templates\inc\options_admin.html:45
+msgid "add new worker"
+msgstr "añadir nuevo trabajador"
+
+#: .\templates\inc\options_admin.html:46
+msgid "employee list"
+msgstr "lista de trabajadores"
+
+#: .\templates\inc\options_admin.html:60
+msgid "income of"
+msgstr "ingreso de"
+
+#: .\templates\inc\options_admin.html:62
+msgid "generate invoice"
+msgstr "generar ingreso"
+
+#: .\templates\inc\options_admin.html:63
+msgid "invoice list"
+msgstr "lista de ingresos"
+
+#: .\templates\inc\options_admin.html:81
+msgid "cash of"
+msgstr "caja de"
+
+#: .\templates\inc\options_admin.html:83
+msgid "add new income"
+msgstr "añadir nuevo ingreso"
+
+#: .\templates\inc\options_admin.html:84
+msgid "add new expense"
+msgstr "añadir nuevo gasto"
+
+#: .\templates\inc\options_admin.html:85
+msgid "income list"
+msgstr "lista de entradas"
 
 #: .\templates\inc\table_patient.html:14 .\templates\inc\table_patient.html:15
 msgid "print"
 msgstr "imprimir"
-
-#: .\templates\inc\worker_info.html:22
-msgid "events for today"
-msgstr "eventos para hoy"
 
 #: .\templates\inc\worker_info.html:47
 msgid "today's gain"
@@ -846,10 +1206,6 @@ msgstr "ganancias del mes"
 #: .\templates\inc\worker_info.html:95
 msgid "call to boss"
 msgstr "llamar al jefe"
-
-#: .\templates\layout.html:10 .\templates\layout.html:120
-msgid "home"
-msgstr "inicio"
 
 #: .\templates\layout_login.html:25
 msgid "login page"
@@ -868,10 +1224,8 @@ msgid "email address"
 msgstr "dirección"
 
 #: .\templates\pages\contact.html:49
-#, fuzzy
-#| msgid "contact name"
 msgid "contact info"
-msgstr "nombre de contacto"
+msgstr "información de contacto"
 
 #: .\templates\pages\contact.html:65
 msgid "send to message"
@@ -890,6 +1244,15 @@ msgstr "teléfono"
 #: .\templates\pages\contact.html:91
 msgid "message"
 msgstr "mensaje"
+
+#~ msgid "social networks"
+#~ msgstr "redes sociales"
+
+#~ msgid "follow us"
+#~ msgstr "siguenos"
+
+#~ msgid "today"
+#~ msgstr "hoy"
 
 #~ msgid "our blog"
 #~ msgstr "nuestro blog"

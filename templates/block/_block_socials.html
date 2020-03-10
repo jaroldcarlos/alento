@@ -1,11 +1,6 @@
 {% load i18n %}
-<div class="row small-up-3">
-<p class="lead">{% trans "social networks"|title %}</p>
-{% for item in socials %}
-    <div class="column text-center">
-        <a href="{{ item.url }}" title="{{ item.get_name_display }}"><i class="{{ item.name }}"></i>
-        <p><small>{% trans "follow us"|capfirst %}</small></p></a>
-        <br>
-    </div>
-{% endfor %}
-</div>
+<ul class="social">
+    {% for item in socials %}
+        <li><a href="{{ item.url }}" title="{{ item.get_name_display }}" ><i class="{{ item.name }}"></i></a></li>
+    {% endfor %}
+</ul>

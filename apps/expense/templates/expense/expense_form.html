@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 col-md-pull-6">
+    {% include "inc/portlet/base.html" with title='Información' icon='flaticon2-files-and-folders' %}
+    <form action="" method="post" enctype="multipart/form-data" class="kt-form" autocomplete="off">
+    {% csrf_token %}
+        {% include "inc/form/field_date.html" with field=form.date %}
+        {% include "inc/form/field_date.html" with field=form.date_payment %}
+        {% include "inc/form/field.html" with field=form.local  %}
+        {% include "inc/form/field.html" with field=form.user  %}
+        {% include "inc/form/field.html" with field=form.service  %}
+        {% include "inc/form/field.html" with field=form.invoice_number %}
+        {% include "inc/form/field.html" with field=form.total %}
+        {% include "inc/form/field_file.html" with field=form.invoice_file %}
+    {% include "inc/portlet/end.html" %}
+    </div>
+    <div class="col-md-6 col-md-pull-6">
+    {% include "inc/portlet/base.html" with title='Comments' icon='flaticon2-files-and-folders' %}
+        <div class="overflow-hidden">
+            <div class="row">
+                <div class="col-sm-12">
+                    {% include "inc/form/field_textarea.html" with field=form.comment %}
+                </div>
+            </div>
+        </div>
+    {% include "inc/portlet/end.html" %}
+    </div>
+    <div class="col-md-12">
+    {% include "inc/portlet/base.html" %}
+        <div class="kt-section__content kt-section__content--solid">
+        <button type="submit" name="submit" class="btn btn-secondary btn-hover-brand" >{% trans "Save " %}</button>
+        <a class="btn btn-secondary btn-hover-brand" onclick="window.history.back()"> <i class="fa fa-reply"></i> {% trans 'Go Back' %}</a>
+        {% if object %}
+            <a class="btn btn-danger float-right" href="{% url 'expense:expense_delete' object.pk %}"> <i class="fa fa-trash"></i> {% trans 'Delete' %}</a>
+        {% endif %}
+        </div>
+    {% include "inc/portlet/end.html" %}
+    </div>
+    </form>
+</div>
+    {% comment %}
+
+
+    <div class='row'>
+       <div class="col-md-6 col-md-push-6">
+            {% include "inc/portlet/base.html" with title='Añadir gasto' icon='flaticon-diagram' %}
+                <div class="overflow-hidden">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {% include "inc/form/field_date.html" with field=form.date %}
+                            {% include "inc/form/field_date.html" with field=form.date_payment %}
+                            {% include "inc/form/field.html" with field=form.local  %}
+                            {% include "inc/form/field.html" with field=form.user  %}
+                            {% include "inc/form/field.html" with field=form.service  %}
+                            {% include "inc/form/field.html" with field=form.invoice_number %}
+                            {% include "inc/form/field.html" with field=form.total %}
+                            {% include "inc/form/field_file.html" with field=form.invoice_file %}
+
+                        </div>
+                    </div>
+                </div>
+            {% include "inc/portlet/end.html" %}
+        </div>
+        <div class="col-md-6 col-md-pull-6">
+            {% include "inc/portlet/base.html" with title='Comments' icon='flaticon2-files-and-folders' %}
+                <div class="overflow-hidden">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {% include "inc/form/field_textarea.html" with field=form.comment %}
+                        </div>
+                    </div>
+                </div>
+            {% include "inc/portlet/end.html" %}
+        </div>
+        <div class="col-md-12">
+            {% include "inc/portlet/base.html" %}
+                <div class="kt-section__content kt-section__content--solid">
+                <button type="submit" name="submit" class="btn btn-secondary btn-hover-brand" >{% trans "Save " %}</button>
+                <a class="btn btn-secondary btn-hover-brand" onclick="window.history.back()"> <i class="fa fa-reply"></i> {% trans 'Go Back' %}</a>
+                {% if object %}
+                    <a class="btn btn-danger float-right" href="{% url 'expense:expense_delete' object.pk %}"> <i class="fa fa-trash"></i> {% trans 'Delete' %}</a>
+                {% endif %}
+                </div>
+            {% include "inc/portlet/end.html" %}
+        </div>
+    </div>
+       {% endcomment %}
+</form>
+{% endblock content %}
+
+{% block js %}
+   {% if update %}
+    <script type="text/javascript">
+       $(function() {
+        $( ".datepicker" ).datepicker({ format: 'dd/mm/yyyy', locale: 'es', orientation: "bottom auto"  });
+      });
+    </script>
+    {% else %}
+     <script type="text/javascript">
+       $(function() {
+            $( ".datepicker" ).datepicker({ format: 'dd/mm/yyyy', orientation: "bottom auto", locale: 'es'  }).datepicker("setDate", new Date());;
+      });
+    </script>
+    {% endif %}
+{% endblock js %}

@@ -30,7 +30,7 @@ class Worker(ActiveModel):
     postalcode = models.CharField(_('postal code'), max_length=100, blank=True)
     city = models.CharField(_('city'), max_length=100, blank=True)
     state = models.CharField(_('state'), max_length=100, blank=True)
-
+    dni = models.CharField(_('dni'), max_length=9, unique=True)
     country = models.CharField(_('country'), max_length=100, blank=True)
 
     phone1 = models.CharField(_('phone'), max_length=100, blank=True)
@@ -49,5 +49,5 @@ class Worker(ActiveModel):
     def full_name(self):
         return '{} {}'.format(self.user.first_name, self.user.last_name)
 
-    # def get_absolute_url(self):
-    #     return reverse('usuario:view', kwargs={'pk': self.pk})
+    def get_view_url(self):
+        return reverse('dashboard:view_worker', kwargs={'dni': self.dni})

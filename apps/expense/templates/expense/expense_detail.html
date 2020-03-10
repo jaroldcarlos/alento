@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+{% load custom_filters %}
+{% load static %}
+{% block content %}
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+        <div class="kt-portlet">
+            <div class="kt-portlet__body kt-portlet__body--fit">
+                <div class="kt-invoice-2">
+                    <div class="kt-invoice__head">
+                        <div class="kt-invoice__container">
+                            <div class="kt-invoice__brand">
+                                <div href="#" class="kt-invoice__logo">
+                                    <a href="#"><img src="{% static 'img/logo.jpeg'%}" style="width: 200px;"></a>
+                                    <span class="kt-invoice__desc">
+                                        <span>{{ data.address }}</span>
+                                        <span>{{ data.state }} {{ data.postal_code }}</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="kt-invoice__items">
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__subtitle">{% trans "Data" %}</span>
+                                    <span class="kt-invoice__text">{{ item.date }}</span>
+                                </div>
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__subtitle"> {% trans "WALLBILL NO." %} </span>
+                                    <span class="kt-invoice__text">{{ item.invoice_number }}</span>
+                                </div>
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__subtitle"> {% trans "WALLBILL TO." %} </span>
+                                    <span class="kt-invoice__text">{{ item.client.name_business }}<br>{{ item.client.direction_business }}-{{ item.client.postal_code_business }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kt-invoice__body">
+                        <div class="kt-invoice__container">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>{% trans "Machine" %}</th>
+                                            <th>{% trans "month" %}/{% trans "year" %}</th>
+                                            <th> {% trans "amount" %}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in item.data.all  %}
+                                        <tr>
+                                            <td>{{ item.series }}</td>
+                                            <td>{{ item.invoice.date|date:'F Y' }}</td>
+                                            <td class="kt-font-danger kt-font-lg">{{ item.local_net|currency }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kt-invoice__footer">
+                        <div class="kt-invoice__container">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>{% trans "AGENT" %}</th>
+                                            <th>{% trans "EMAIL" %}</th>
+                                            <th>{% trans "DUE DATE" %}</th>
+                                            <th>{% trans "TOTAL AMOUNT" %}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:25%">{{ item.agent }}</td>
+                                            <td style="width:25%">info@idarts.es</td>
+                                            <td style="width:25%">{{ item.date_payment|date:'d F Y'|default:'pending' }}</td>
+                                            <td style="width:25%" class="kt-font-danger kt-font-xl kt-font-boldest">{{ total|currency }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kt-invoice__actions">
+                        <div class="kt-invoice__container">
+                            <button type="button" class="btn btn-label-brand btn-bold" onclick="window.print();"> {% trans "Download Wallbill" %} </button>
+                            <button type="button" class="btn btn-brand btn-bold" onclick="window.print();">{% trans "Print Wallbill" %} </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

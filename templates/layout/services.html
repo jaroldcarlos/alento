@@ -4,19 +4,69 @@
         <!-- ROW -->
         <div class="row">
             <div class="col-lg-12 margbot30 margtop20">
-                <a class="services_item" href="javascript:void(0);" >
-                    <h2><b>{{ item.name|title }}</b></h2>
-                    {{ item.description|safe }}
-                </a>
+                <h2><b>{{ item.name|capfirst }}</b></h2>
+                {{ item.description|safe }}
             </div>
             {% for service in item.service.all %}
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-ss-12 margbot30">
-                <a class="services_item" href="javascript:void(0);" >
-                    <p><b>{{ service.name|capfirst }}:</b></p>
+                    <p><strong>{{ service.name|capfirst }}:</strong></p>
                     <span>{{ service.description|safe  }}</span>
-                </a>
             </div>
             {% endfor %}
-        </div><!-- //ROW -->
+        </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ss-12 margbot30 margtop20">
+                <h4 class="center"><b>Modalidades:</b></h4>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 1.</b> <br>
+                        Selección de persoal según perfil do usuario.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 2.</b> <br>
+                        Xestión do personal: persoal titulado e formado.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 3.</b> <br>
+                        Atención de incidencias de 24h.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 4.</b> <br>
+                        Seguro de responsabilidade civil.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 5.</b> <br>
+                        Asesoramento lei de dependencia.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 6.</b> <br>
+                        Plan de atención individualizado.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 7.</b> <br>
+                        Período de adaptación ó domicilio.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 8.</b> <br>
+                        Rexistro diario de incidencias.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                       <b> 9.</b> <br>
+                        Coordinadora do servicio.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                        <b>10.</b> <br>
+                        Auxiliar de referencia.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                        <b>11.</b> <br>
+                        Seguimiento continuado do servicio.
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-ss-12 margbot30 center">
+                        <b>12.</b> <br>
+                        Unidad de Apoio Familiar.
+                    </div>
+                </div>
+            </div>
+
     </div><!-- //CONTAINER -->
 </div>

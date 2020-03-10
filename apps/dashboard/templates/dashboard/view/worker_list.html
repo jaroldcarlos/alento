@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block css %}
-    <link href="{% static 'dashboard/css/demo1/pages/wizard/wizard-4.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'dashboard/css/demo2/pages/wizard/wizard-4.css' %}" rel="stylesheet" type="text/css" />
 {% endblock css %}
 
 {% block content %}
@@ -68,7 +68,7 @@
                     <div class="kt-widget kt-widget--user-profile-2">
                         <div class="kt-widget__head">
                             <div class="kt-widget__media">
-                                <img class="kt-widget__img kt-hidden-" src="{% if item.image %}{{ item.image.url }}{% else %}/media/worker/default.png{% endif %}" alt="image">
+                                <img class="kt-widget__img kt-hidden-" src="{% if item.image %}{{ item.image.90w.url }}{% else %}/media/worker/default.png{% endif %}" alt="image">
                                 <div class="kt-widget__pic kt-widget__pic--success kt-font-success kt-font-boldest kt-hidden">
                                     ChS
                                 </div>
@@ -106,7 +106,7 @@
                             </div>
                         </div>
                         <div class="kt-widget__footer">
-                            <button type="button" class="btn btn-label-warning btn-lg btn-upper">{% trans "see profile" %}</button>
+                            <a href="{{ item.get_view_url }}" class="btn btn-label-warning btn-lg btn-upper" >{% trans "see profile" %}</a>
                         </div>
                     </div>
 

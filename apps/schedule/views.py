@@ -11,6 +11,8 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.admin.views.decorators import staff_member_required
 
 from apps.schedule.models import Event
+from apps.worker.models import Worker
+from apps.patient.models import Patient
 from apps.schedule.forms import EventForm
 
 
@@ -21,33 +23,49 @@ def index(request):
     return render(request, ('hello'), context)
 
 
-def create_event(request):
+def create_event(request, dni_worker, dni_patient):
 
+    try:
+        worker = Worker.objects.get(dni=dni_worker)
+    except :
+        worker = ''
+
+    try:
+        patient = Patient.objects.get(dni=dni_patient)
+    except :
+        patient = ''
+        print(worker)
+        print(patient)
     if request.method == 'POST':
         event_form = EventForm(request.POST)
-        if event_form.is_valid():
-            event = event_form.save(commit=False)
-            print(event.start_time)
-            start = datetime.datetime.strptime(str(event.start_time), '%H:%M:%S')
-            end = datetime.datetime.strptime(str(event.end_time), '%H:%M:%S')
-            event.time = (abs((end-start).seconds)/60)
-
-            event.save()
-            messages.success(request, _('event was successfully created')+' {worker}-{patient} ({date} {start}:{end})'.format(
-                worker=event.worker.user.first_name,
-                patient=event.patient.first_name,
-                date=event.date.strftime('%d-%m-%Y'),
-                start=event.start_time.strftime('%H:%M'),
-                end=event.end_time.strftime('%H:%M')
+        if patient and worker:
+            if event_form.is_valid():
+                event = event_form.save(commit=False)
+                event.worker = worker
+                event.patient = patient
+                start = datetime.datetime.strptime(str(event.start_time), '%H:%M:%S')
+                end = datetime.datetime.strptime(str(event.end_time), '%H:%M:%S')
+                event.time = (abs((end-start).seconds)/60)
+                event.save()
+                messages.success(request, _('event was successfully created')+' {worker}-{patient} ({date} {start}:{end})'.format(
+                    worker=event.worker.user.first_name,
+                    patient=event.patient.first_name,
+                    date=event.date.strftime('%d-%m-%Y'),
+                    start=event.start_time.strftime('%H:%M'),
+                    end=event.end_time.strftime('%H:%M')
+                    )
                 )
-            )
-            return redirect('dashboard:create_event')
+                reverse('dashboard:create_event', kwargs={'dni_worker': worker.dni, 'dni_patient': patient.dni})
+            else:
+                messages.error(request, _('Please correct the error below.'))
         else:
-            messages.error(request, _('Please correct the error below.'))
+            messages.error(request, _('worker or patient no exist'))
     else:
         event_form = EventForm()
     context = {
         'event_form': event_form,
+        'patient': patient,
+        'worker': worker
     }
     return render(request, 'dashboard/form/event.html', context)
 

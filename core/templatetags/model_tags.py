@@ -182,3 +182,31 @@ def admin_info():
     }
 
     return context
+
+@register.inclusion_tag('inc/calendar.html')
+def calendar_worker(worker=None, lang=None):
+    try:
+        items = Event.objects.filter(worker__dni=worker.dni).order_by('start_time')
+    except:
+        items = ''
+
+    context = {
+        'items': items,
+        'lang':lang,
+    }
+
+    return context
+
+@register.inclusion_tag('inc/calendar.html')
+def calendar_patient(patient=None, lang=None):
+    try:
+        items = Event.objects.filter(patient__dni=patient.dni).order_by('start_time')
+    except:
+        items = ''
+
+    context = {
+        'items': items,
+        'lang':lang,
+    }
+
+    return context
