@@ -18,11 +18,11 @@ def children(item):
         except Link.DoesNotExist:
             item = ''
 
-     context = {
+    context = {
         'item':item,
-     }
+    }
 
-     return context
+    return context
 
 @register.filter
 def src_set(item, template="list"):

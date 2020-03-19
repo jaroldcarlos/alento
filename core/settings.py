@@ -42,12 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'bootstrap4',
-    'leaflet',
+    'widget_tweaks',
+    'easy_thumbnails',
     'mptt',
+    'leaflet',
     'django_mptt_admin',
     'django_summernote',
-    'easy_thumbnails',
-    'widget_tweaks',
+
+    'webpush',
 
     'apps.dashboard',
     'apps.frontend',
@@ -58,6 +60,12 @@ INSTALLED_APPS = [
     'apps.service',
 
 ]
+
+WEBPUSH_SETTINGS = {
+    "VAPID_PUBLIC_KEY": "BOmjqkGL3xAwzVxr_35TA9onNEYtxb5218VDFcyx3i5LL57Rt04ZQw88W5J03WVehH9-rEivWh3iXq_KYVzTbGE",
+    "VAPID_PRIVATE_KEY":"m-bUNZyo48cgvLrlkNY_-VAmpn6PLjp4owJm7oP9VAo",
+    "VAPID_ADMIN_EMAIL": "admin@alento.com"
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -87,6 +95,7 @@ TEMPLATES = [
             ],
             'libraries':{
                 'model_tags': 'core.templatetags.model_tags',
+                'custom_filters': 'core.templatetags.custom_filters',
 
             }
         },

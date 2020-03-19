@@ -4,23 +4,19 @@ import decimal
 from django.db.models import Sum
 from django.utils import timezone
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
 from django.contrib.admin.views.decorators import staff_member_required
 
+from webpush import send_user_notification
+
 from apps.schedule.models import Event
 from apps.worker.models import Worker
 from apps.patient.models import Patient
 from apps.schedule.forms import EventForm
-
-
-def index(request):
-    context = {
-
-    }
-    return render(request, ('hello'), context)
 
 
 def create_event(request, dni_worker, dni_patient):
@@ -55,6 +51,10 @@ def create_event(request, dni_worker, dni_patient):
                     end=event.end_time.strftime('%H:%M')
                     )
                 )
+                payload = {'head': 'Welcome!', 'body': 'Hello World', 'icon': 'https://i.imgur.com/dRDxiCQ.png', 'url': 'https://www.example.com'}
+                user = User.objects.get(first_name='Jarold')
+                print(user)
+                send_user_notification(user=user, payload=payload, ttl=1000)
                 reverse('dashboard:create_event', kwargs={'dni_worker': worker.dni, 'dni_patient': patient.dni})
             else:
                 messages.error(request, _('Please correct the error below.'))

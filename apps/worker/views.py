@@ -164,6 +164,7 @@ def view_worker(request, dni=None):
         total_month = total_month['sum']
     else:
         total_month = 0
+
     context = {
         'item': item,
         "events_last_month": events_last_month.count(),

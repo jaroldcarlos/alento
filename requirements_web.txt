@@ -1,0 +1,12 @@
+Django==2.2.6
+django-bootstrap4==1.1.1
+django-js-asset==1.2.2
+django-leaflet==0.26.0
+django-modeltranslation==0.14.1
+django-mptt==0.10.0
+django-mptt-admin==1.0.0
+django-summernote==0.8.11.4
+django-widget-tweaks==1.4.5
+easy-thumbnails==2.6
+mysqlclient==1.4.6
+sqlparse==0.3.0

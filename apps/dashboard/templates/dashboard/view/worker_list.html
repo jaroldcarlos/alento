@@ -9,7 +9,7 @@
 <div class="row">
     {% for item in items %}
 
-        <div class="col-xl-3">
+        <div class="col-xl-4">
 
             <!--Begin::Portlet-->
             <div class="kt-portlet kt-portlet--height-fluid">
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                             <div class="kt-widget__info">
-                                <a href="#" class="kt-widget__username">
+                                <a href="{{ item.get_view_url }}" class="kt-widget__username">
                                     {{ item.user.get_full_name }}
                                 </a>
                                 <span class="kt-widget__desc">

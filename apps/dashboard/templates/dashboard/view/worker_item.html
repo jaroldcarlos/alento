@@ -25,8 +25,6 @@
                     <span class="kt-subheader__breadcrumbs-separator"></span>
                     <a href="" class="kt-subheader__breadcrumbs-link">
                         {{ item.full_name }} </a>
-
-                    <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
                 </div>
             </div>
 
@@ -191,7 +189,7 @@
                         </div>
                         <div class="kt-widget__body">
                             <div class="kt-widget__section">
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical.
+                                {{ item.note|default:'' }}
                             </div>
                             <div class="kt-widget__content">
                                 {% comment %}
@@ -591,8 +589,7 @@
                                                 {% trans "patient" %}
                                             </p>
                                         </div>
-                                        <a href="{{ patient.get_add_event }}" class="btn btn-brand btn-elevate">{% trans "add events" %}</a>&nbsp;
-                                        <a href="{{ patient.get_view_url }}" class="btn btn-brand btn-elevate">{% trans "see profile" %}</a>
+                                        <a href="{{ patient.get_add_event }}" class="btn btn-brand ">{% trans "add services" %}</a>
                                     </div>
                                 {% endfor %}
                             </div>

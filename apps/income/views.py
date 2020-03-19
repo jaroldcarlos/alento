@@ -19,6 +19,7 @@ from apps.expense.models import Expense
 from .models import Income
 from .forms import IncomeForm
 
+from webpush import send_group_notification
 
 @user_passes_test(lambda u: u.is_staff)
 def income_create(request):
@@ -39,6 +40,11 @@ def income_create(request):
     context = {
         'form': form
     }
+
+    payload = {'head': 'Welcome!', 'body': 'Hello World', 'icon': 'https://i.imgur.com/dRDxiCQ.png', 'url': 'https://www.example.com'}
+
+    send_group_notification(user='admin', payload=payload, ttl=1000)
+
     return render(request, 'income/income_form.html', context)
 
 
