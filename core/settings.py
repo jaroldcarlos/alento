@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import environ
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -28,7 +27,7 @@ def get_env_value(env_variable):
         raise ImproperlyConfigured(error_msg)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -115,11 +114,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'HOST': env.str('DATABASE_HOST'),
-         'NAME': env.str('DATABASE_NAME'),
-         'PORT': env.str('DATABASE_PORT'),
-         'USER': env.str('DATABASE_USER'),
-         'PASSWORD': env.str('DATABASE_PASS '),
+         'HOST': os.environ['DATABASE_HOST'],
+         'NAME': os.environ['DATABASE_NAME'],
+         'PORT': int(os.environ['DATABASE_PORT']),
+         'USER': os.environ['DATABASE_USER'],
+         'PASSWORD': os.environ['DATABASE_PASS'],
          'OPTIONS': {
              'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", }
     }
@@ -194,9 +193,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Admin
-SITE_HEADER = env.str('SITE_HEADER')
-SITE_TITLE = env.str('SITE_TITLE')
-INDEX_TITLE = env.str('INDEX_TITLE')
+SITE_HEADER = os.environ['SITE_HEADER']
+SITE_TITLE = os.environ['SITE_TITLE']
+INDEX_TITLE = os.environ['INDEX_TITLE']
 
 
 THUMBNAIL_ALIASES = {
@@ -217,10 +216,10 @@ if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend',
-    EMAIL_HOST = env.str('EMAIL_HOST'),
-    EMAIL_PORT = env.str('EMAIL_PORT'),
-    EMAIL_HOST_USER = env.str('EMAIL_HOST_USER'),
-    EMAIL_HOST_PASSWORD = env.str('DEFAULT_FROM_EMAIL'),
+    EMAIL_HOST = os.environ['EMAIL_HOST'],
+    EMAIL_PORT = os.environ['EMAIL_PORT'],
+    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER'],
+    EMAIL_HOST_PASSWORD = os.environ['DEFAULT_FROM_EMAIL'],
     EMAIL_USE_TLS = False
     EMAIL_USE_SSL = True
 
