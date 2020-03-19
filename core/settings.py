@@ -18,17 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 from django.core.exceptions import ImproperlyConfigured
 
-
-def get_env_value(env_variable):
-    try:
-        return os.environ[env_variable]
-    except KeyError:
-        error_msg = _('Set the {} environment variable').format(var_name)
-        raise ImproperlyConfigured(error_msg)
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
-
+SECRET_KEY = os.environ.get['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -114,17 +105,17 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'HOST': os.environ['DATABASE_HOST'],
-         'NAME': os.environ['DATABASE_NAME'],
-         'PORT': int(os.environ['DATABASE_PORT']),
-         'USER': os.environ['DATABASE_USER'],
-         'PASSWORD': os.environ['DATABASE_PASS'],
+         'HOST': os.environ.get['DATABASE_HOST'],
+         'NAME': os.environ.get['DATABASE_NAME'],
+         'PORT': int(os.environ.get['DATABASE_PORT']),
+         'USER': os.environ.get['DATABASE_USER'],
+         'PASSWORD': os.environ.get['DATABASE_PASS'],
          'OPTIONS': {
              'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", }
     }
 }
 
-
+sdsfd sdas asda
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -193,9 +184,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Admin
-SITE_HEADER = os.environ['SITE_HEADER']
-SITE_TITLE = os.environ['SITE_TITLE']
-INDEX_TITLE = os.environ['INDEX_TITLE']
+SITE_HEADER = os.environ.get['SITE_HEADER']
+SITE_TITLE = os.environ.get['SITE_TITLE']
+INDEX_TITLE = os.environ.get['INDEX_TITLE']
 
 
 THUMBNAIL_ALIASES = {
@@ -216,10 +207,10 @@ if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend',
-    EMAIL_HOST = os.environ['EMAIL_HOST'],
-    EMAIL_PORT = os.environ['EMAIL_PORT'],
-    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER'],
-    EMAIL_HOST_PASSWORD = os.environ['DEFAULT_FROM_EMAIL'],
+    EMAIL_HOST = os.environ.get['EMAIL_HOST'],
+    EMAIL_PORT = os.environ.get['EMAIL_PORT'],
+    EMAIL_HOST_USER = os.environ.get['EMAIL_HOST_USER'],
+    EMAIL_HOST_PASSWORD = os.environ.get['DEFAULT_FROM_EMAIL'],
     EMAIL_USE_TLS = False
     EMAIL_USE_SSL = True
 
