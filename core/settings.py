@@ -115,11 +115,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'HOST': env.str('DATABASE_HOST')
-         'NAME': env.str('DATABASE_NAME')
-         'PORT': env.str('DATABASE_PORT')
-         'USER': env.str('DATABASE_USER')
-         'PASSWORD': env.str('DATABASE_PASS ')
+         'HOST': env.str('DATABASE_HOST'),
+         'NAME': env.str('DATABASE_NAME'),
+         'PORT': env.str('DATABASE_PORT'),
+         'USER': env.str('DATABASE_USER'),
+         'PASSWORD': env.str('DATABASE_PASS '),
          'OPTIONS': {
              'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", }
     }
@@ -216,11 +216,11 @@ LEAFLET_CONFIG = {
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = env.str('EMAIL_HOST')
-    EMAIL_PORT = env.str('EMAIL_PORT')
-    EMAIL_HOST_USER = env.str('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = env.str('DEFAULT_FROM_EMAIL')
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend',
+    EMAIL_HOST = env.str('EMAIL_HOST'),
+    EMAIL_PORT = env.str('EMAIL_PORT'),
+    EMAIL_HOST_USER = env.str('EMAIL_HOST_USER'),
+    EMAIL_HOST_PASSWORD = env.str('DEFAULT_FROM_EMAIL'),
     EMAIL_USE_TLS = False
     EMAIL_USE_SSL = True
 
