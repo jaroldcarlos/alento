@@ -28,12 +28,15 @@ def get_env_value(env_variable):
         raise ImproperlyConfigured(error_msg)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = 'i#b6t6xwab30dr1-6kb#qk+^*oh9)-#ohtgngv3a8#i0%nsw(w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+
+# Application definition
 
 INSTALLED_APPS = [
 
@@ -115,11 +118,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'HOST': env.str('DATABASE_HOST')
-         'NAME': env.str('DATABASE_NAME')
-         'PORT': env.str('DATABASE_PORT')
-         'USER': env.str('DATABASE_USER')
-         'PASSWORD': env.str('DATABASE_PASS ')
+         'HOST': 'db.ecdesign.es',
+         'NAME': 'dbecd_alento',
+         'PORT': '3306',
+         'USER': 'dbecd_alento',
+         'PASSWORD': 'Jarolo2019',
          'OPTIONS': {
              'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", }
     }
@@ -194,9 +197,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Admin
-SITE_HEADER = env.str('SITE_HEADER')
-SITE_TITLE = env.str('SITE_TITLE')
-INDEX_TITLE = env.str('INDEX_TITLE')
+SITE_HEADER = _('Alento')
+SITE_TITLE = _('Alento')
+INDEX_TITLE = _('Welcome to Alento')
 
 
 THUMBNAIL_ALIASES = {
@@ -217,13 +220,13 @@ if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = env.str('EMAIL_HOST')
-    EMAIL_PORT = env.str('EMAIL_PORT')
-    EMAIL_HOST_USER = env.str('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = env.str('DEFAULT_FROM_EMAIL')
+    EMAIL_HOST = 'alemdo.com'
+    EMAIL_PORT = 465
+    EMAIL_HOST_USER = 'noreply@alendo.com'
+    EMAIL_HOST_PASSWORD = ''
     EMAIL_USE_TLS = False
     EMAIL_USE_SSL = True
-
+    DEFAULT_FROM_EMAIL = 'noreply@alendo.com'
 
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
