@@ -19,11 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from django.core.exceptions import ImproperlyConfigured
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY_APP')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['alento.ecdesign.es', 'www.alento.ecdesign.es', 'localhost']
 
 INSTALLED_APPS = [
 
@@ -105,17 +105,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'HOST': os.environ.get['DATABASE_HOST'],
-         'NAME': os.environ.get['DATABASE_NAME'],
-         'PORT': int(os.environ.get['DATABASE_PORT']),
-         'USER': os.environ.get['DATABASE_USER'],
-         'PASSWORD': os.environ.get['DATABASE_PASS'],
+         'HOST': os.environ.get('DATABASE_HOST_APP'),
+         'NAME': os.environ.get('DATABASE_NAME_APP'),
+         'PORT': int(os.environ.get('DATABASE_PORT_APP')),
+         'USER': os.environ.get('DATABASE_USER_APP'),
+         'PASSWORD': os.environ.get('DATABASE_PASS_APP'),
          'OPTIONS': {
              'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", }
     }
 }
 
-sdsfd sdas asda
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -207,10 +206,10 @@ if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend',
-    EMAIL_HOST = os.environ.get['EMAIL_HOST'],
-    EMAIL_PORT = os.environ.get['EMAIL_PORT'],
-    EMAIL_HOST_USER = os.environ.get['EMAIL_HOST_USER'],
-    EMAIL_HOST_PASSWORD = os.environ.get['DEFAULT_FROM_EMAIL'],
+    EMAIL_HOST = os.environ.get('EMAIL_HOST_APP'),
+    EMAIL_PORT = os.environ.get('EMAIL_PORT_APP'),
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER_APP'),
+    EMAIL_HOST_PASSWORD = os.environ.get('DEFAULT_FROM_EMAIL_APP'),
     EMAIL_USE_TLS = False
     EMAIL_USE_SSL = True
 
