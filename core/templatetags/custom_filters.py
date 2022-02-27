@@ -18,11 +18,9 @@ def children(item):
         except Link.DoesNotExist:
             item = ''
 
-    context = {
+    return {
         'item':item,
     }
-
-    return context
 
 @register.filter
 def src_set(item, template="list"):
@@ -106,7 +104,7 @@ def isdigit(value):
 @register.filter(name='get_type', is_safe=False)
 def get_type(value):
     t = type(value)
-    return t.__module__ + "." + t.__name__
+    return f'{t.__module__}.{t.__name__}'
 
 
 @register.filter()
@@ -121,7 +119,7 @@ def link(value, variant=None):
         if '+' in url:
             url.replace('+', '00')
 
-        url = '0034' + url if not '00' in url[0:2] else url
+        url = f'0034{url}' if '00' not in url[:2] else url
 
         return mark_safe('<a href="tel:{}">{}</a>'.format(url, value))
 
@@ -159,10 +157,12 @@ def iconify(value):
         'html': 'fa-file-code-o',
         'txt':  'fa-file-text-o',
     }
-    return mark_safe(' <a href="{file}" title="{name}"><i class="fa {icon}"></i></a> '.format(
-        name=value,
-        file=value.url,
-        icon=icon[extension]) if extension in icon.keys() else 'fa-file-pdf-o'
+    return mark_safe(
+        ' <a href="{file}" title="{name}"><i class="fa {icon}"></i></a> '.format(
+            name=value, file=value.url, icon=icon[extension]
+        )
+        if extension in icon
+        else 'fa-file-pdf-o'
     )
 
 @register.filter()
@@ -206,13 +206,12 @@ def human_readable_timedelta(value, complete=False):
 
     text = ""
     for value, name in valuesAndNames:
-        if complete:
-            if value > 0:
+        if value > 0:
+            if complete:
                 text += len(text) and ", " or ""
                 text += "%d %s" % (value, name)
                 text += (value > 1) and "s" or ""
-        else:
-            if value > 0:
+            else:
                 text += "%d %s" % (value, name)
                 text += (value > 1) and "s" or ""
                 break
@@ -258,8 +257,7 @@ def pretty_sql(sql):
 @register.filter('pretty_json')
 def pretty_json(json_text):
     try:
-        pretty_json_text = json.dumps(json_text, indent=4)
-        return pretty_json_text
+        return json.dumps(json_text, indent=4)
     except Exception:
         return json_text
 
@@ -289,6 +287,6 @@ def format(value, fmt):
 
 @register.filter(name='luck')
 def luck(items, limit):
-    return items[0:limit]
+    return items[:limit]
 
 

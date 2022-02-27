@@ -10,9 +10,8 @@ from .managers import ActiveManager, PublishedManager, ReadOnlyManager, InSeason
 
 
 def image_path(instance, filename):
-    path = 'images'
     print(inspect.stack()[1])
-    return path
+    return 'images'
 
 
 class ActiveModel(models.Model):
@@ -30,7 +29,7 @@ class ActiveModel(models.Model):
 
     @property
     def active(self):
-        if not self.active_status == 'p':
+        if self.active_status != 'p':
             return False
 
         if self.date_active_ini and self.date_active_ini > timezone.now():
@@ -56,7 +55,7 @@ class BuyableModel(models.Model):
 
     @property
     def free(self):
-        return True if self.price == 0 else False
+        return self.price == 0
 
     class Meta:
         abstract = True
@@ -113,16 +112,17 @@ class DescriptionModel(models.Model):
     )
 
     def get_description_short(self, num_chars=245):
-        if self.description_short:
-            if len(self.description_short) > num_chars:
-                return self.description_short[:num_chars] + '...'
-            else:
-                return self.description_short
+        if not self.description_short:
+            return (
+                f'{self.description[:num_chars]}...'
+                if len(self.description) > num_chars
+                else self.description
+            )
+
+        if len(self.description_short) > num_chars:
+            return f'{self.description_short[:num_chars]}...'
         else:
-            if len(self.description) > num_chars:
-                return self.description[:num_chars] + '...'
-            else:
-                return self.description
+            return self.description_short
 
     class Meta:
         abstract = True

@@ -41,12 +41,9 @@ class Link(MPTTModel, DescriptionModel, HookModel, NameModel):
 
     def show(self, title=False):
         descendants = self.get_descendants()
+        menu = '<ul class="menu vertical medium-horizontal expanded medium-text-center" data-responsive-menu="drilldown medium-dropdown">'
         if title and self.name:
-            menu = '<ul class="menu vertical medium-horizontal expanded medium-text-center" data-responsive-menu="drilldown medium-dropdown">'
             menu += '<li class="has-submenu"><a href="{url}">{name}</a></li>'.format(url=self.url, name=self.name)
-        else:
-            menu = '<ul class="menu vertical medium-horizontal expanded medium-text-center" data-responsive-menu="drilldown medium-dropdown">'
-
         for item in descendants:
             menu += '<ul class="submenu menu vertical" data-submenu>'
             menu += "<li class='has-submenu'><a href='{url}'>{name}</a>".format(

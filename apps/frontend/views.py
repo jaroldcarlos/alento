@@ -17,7 +17,7 @@ def home(request):
     except:
         service = ""
 
-    eunit = SpecialisedUnit.objects.all()[0:5]
+    eunit = SpecialisedUnit.objects.all()[:5]
 
     try:
         contact_us = Contact_us.objects.get(name='alento')

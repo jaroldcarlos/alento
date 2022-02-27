@@ -32,13 +32,12 @@ def protected_serve(request, path, document_root=None, show_indexes=False):
         if request.user.is_authenticated:
             if request.user.is_staff:
                 return serve(request, path, document_root, show_indexes)
-            else:
-                from apps.voucher.models import Voucher
-                reference = (path.split('/')[1].split('_')[1])
-                voucher = get_object_or_404(Voucher, reference=reference)
+            from apps.voucher.models import Voucher
+            reference = (path.split('/')[1].split('_')[1])
+            voucher = get_object_or_404(Voucher, reference=reference)
 
-                if voucher.partner().id == request.user.partner.id:
-                    return serve(request, path, document_root, show_indexes)
+            if voucher.partner().id == request.user.partner.id:
+                return serve(request, path, document_root, show_indexes)
 
         return HttpResponseNotFound("restricted access")
 
@@ -62,9 +61,7 @@ def user_is_user(user):
 
 
 def not_in_agents_group(user):
-    if user:
-        return user.groups.filter(name='Agents').count() == 0
-    return False
+    return user.groups.filter(name='Agents').count() == 0 if user else False
 
 
 def create_random_string(length=30):
@@ -72,7 +69,7 @@ def create_random_string(length=30):
         length = 30
 
     symbols = string.ascii_lowercase + string.ascii_uppercase + string.digits
-    return ''.join([random.choice(symbols) for x in range(length)])
+    return ''.join([random.choice(symbols) for _ in range(length)])
 
 
 def humanreadable_timedelta(
@@ -123,13 +120,12 @@ def humanreadable_timedelta(
 
     text = ""
     for value, name in valuesAndNames:
-        if complete:
-            if value > 0:
+        if value > 0:
+            if complete:
                 text += len(text) and ", " or ""
                 text += "%d %s" % (value, name)
                 text += (value > 1) and "s" or ""
-        else:
-            if value > 0:
+            else:
                 text += "%d %s" % (value, name)
                 text += (value > 1) and "s" or ""
                 break
@@ -164,6 +160,5 @@ def save_signature(datauri, invoice):
     from django.conf import settings
     binary_data = a2b_base64(datauri)
     path=os.path.join(settings.MEDIA_ROOT, 'signatures', '{0:05d}.jpg'.format(invoice.pk))
-    fd = open(path, 'wb')
-    fd.write(binary_data)
-    fd.close()
+    with open(path, 'wb') as fd:
+        fd.write(binary_data)
