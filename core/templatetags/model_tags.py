@@ -31,13 +31,11 @@ def children(item, hook=None, lang=None):
         items = Link.objects.filter(pk=item.pk).get_descendants(include_self=False)
     except Link.DoesNotExist:
         items = ''
-    context = {
+    return {
         'item': items,
         'hook': hook,
         'lang': lang
     }
-
-    return context
 
 
 @register.simple_tag()
@@ -47,14 +45,12 @@ def show(instance, title=True):
 
 @register.inclusion_tag('inc/mapleaflet.html')
 def map(item, latitude=None, longitude=None):
-    item.latitude = latitude if latitude else item.latitude
-    item.longitude = longitude if longitude else item.longitude
+    item.latitude = latitude or item.latitude
+    item.longitude = longitude or item.longitude
 
-    context = {
+    return {
         'item': item
     }
-
-    return context
 
 
 @register.inclusion_tag('inc/table_patient.html')
@@ -69,7 +65,7 @@ def show_table(worker=None, patient=None):
     else:
         total = 0
 
-    context = {
+    return {
         'name_worker': worker.worker.full_name,
         'patient': patient,
         'id_name': id_name,
@@ -80,7 +76,6 @@ def show_table(worker=None, patient=None):
         'hour': round(total / 60),
         'total_money': total * money,
     }
-    return context
 
 
 @register.inclusion_tag('inc/activities.html')
@@ -90,11 +85,9 @@ def activities(items):
     except:
         items = ''
 
-    context = {
+    return {
         'items': items,
     }
-
-    return context
 
 
 @register.inclusion_tag('inc/worker_info.html')
@@ -126,7 +119,7 @@ def worker_info(items):
         events_to_date = events_to_date['sum']
         gain_for_month = round(events_to_date * money)
 
-    context = {
+    return {
         'items': items,
         'events_to_date': events_to_date,
         'number_events': number_events,
@@ -135,21 +128,17 @@ def worker_info(items):
         'gain_for_month': gain_for_month,
     }
 
-    return context
-
 
 @register.inclusion_tag('inc/featured_posts.html')
 def featured_posts():
     try:
-        items = BlogPost.actives.all().order_by('date_active_ini')[0:3]
+        items = BlogPost.actives.all().order_by('date_active_ini')[:3]
     except:
         items = ''
 
-    context = {
+    return {
         'items': items,
     }
-
-    return context
 
 
 @register.inclusion_tag('inc/admin_info.html')
@@ -174,14 +163,12 @@ def admin_info():
     except:
         events_month = 0
 
-    context = {
+    return {
         'num_workers': num_workers,
         'num_patients': num_patients,
         'events_today': events_today,
         'events_month': events_month,
     }
-
-    return context
 
 @register.inclusion_tag('inc/calendar.html')
 def calendar_worker(worker=None, lang=None):
@@ -190,12 +177,10 @@ def calendar_worker(worker=None, lang=None):
     except:
         items = ''
 
-    context = {
+    return {
         'items': items,
         'lang':lang,
     }
-
-    return context
 
 @register.inclusion_tag('inc/calendar.html')
 def calendar_patient(patient=None, lang=None):
@@ -204,9 +189,7 @@ def calendar_patient(patient=None, lang=None):
     except:
         items = ''
 
-    context = {
+    return {
         'items': items,
         'lang':lang,
     }
-
-    return context

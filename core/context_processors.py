@@ -20,7 +20,7 @@ def layout_blocks(request):
     except Link.DoesNotExist:
         socials = None
 
-    context = {
+    return {
         'app_name': app_name,
         'home_frontend': menu_home,
         'dash': menu_dash,
@@ -28,13 +28,9 @@ def layout_blocks(request):
         'lang': request.LANGUAGE_CODE
     }
 
-    return context
-
 
 def setlanguage(request):
-    context = {
+    return {
         'LANGUAGES': settings.LANGUAGES,
         'SELECTEDLANG': request.LANGUAGE_CODE
     }
-
-    return context
